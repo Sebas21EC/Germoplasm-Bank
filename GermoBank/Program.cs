@@ -9,6 +9,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddEntityFrameworkNpgsql()
     .AddDbContext<GermoBankUtnContext>(options =>
         options.UseNpgsql("Host=localhost; Port=5432; Pooling=true; Database=germobank_utn; User Id=postgres; Password=root"));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

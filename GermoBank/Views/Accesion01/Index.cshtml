@@ -1,0 +1,122 @@
+﻿@model GermoBank.Models.ModelsPersonalizados.Accesion01Model;
+@{
+    ViewData["Title"] = "Accesion01";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>Accesion01</h1>
+
+<div>s
+    <label for="familia">Familia:</label>
+    <select id="familia" name="familia">
+        <option value="">--Seleccione una familia--</option>
+        @foreach (var familia in Model.familia)
+        {
+            <option value="@familia.IdFamiliaPk">@familia.NombreFamilia</option>
+        }
+    </select>
+</div>
+
+
+<div>
+    <label for="genero">Genero:</label>
+    <select id="genero" name="genero" disabled>
+        <option value="">--Seleccione un genero--</option>
+    </select>
+</div>
+
+<div>
+    <label for="especie">Especie:</label>
+    <select id="especie" name="especie" disabled>
+        <option value="">--Seleccione una especie--</option>
+    </select>
+</div>
+
+<div>
+    <label for="subespecie">Subespecie:</label>
+    <select id="subespecie" name="subespecie" disabled>
+        <option value="">--Seleccione una subespecie--</option>
+    </select>
+</div>
+
+
+
+
+
+
+<script>
+    $(function () {
+        $("#familia").change(function () {
+            var IdFamiliaPk = $(this).val();
+            if (IdFamiliaPk) {
+                $("#genero").prop("disabled", false);
+                $("#especie").prop("disabled", true);
+                $("#subespecie").prop("disabled", true);
+
+                $.ajax({
+                    url: "@Url.Action("ObtenerGeneosPorFamilia", "ControllersPersonalizados/Accesion01Controller")",
+                    type: "POST",
+                    data: { IdFamiliaPk: IdFamiliaPk },
+                    success: function (generos) {
+                        $("#genero").empty().append("<option value=''>--Seleccione un genero--</option>");
+                        $.each(generos, function (i, genero) {
+                            $("#genero").append("<option value='" + genero.IdGeneroPk + "'>" + genero.NombreGenero + "</option>");
+                        });
+                    }
+                });
+            }
+            else {
+                $("#genero").prop("disabled", true);
+                $("#especie").prop("disabled", true);
+                $("#subespecie").prop("disabled", true);
+            }
+        });
+
+        $("#genero").change(function () {
+            var IdGeneroPk = $(this).val();
+            if (IdGeneroPk {
+                $("#especie").prop("disabled", false);
+                $("#subespecie").prop("disabled", true);
+
+                $.ajax({
+                    url: "@Url.Action("ObtenerEspeciesPorGeneros", "Accesion01Model")",
+                    type: "POST",
+                    data: { IdGeneroPk: IdGeneroPk },
+                    success: function (especies) {
+                        $("#especie").empty().append("<option value=''>--Seleccione una especie--</option>");
+                        $.each(especies, function (i, especie) {
+                            $("#especie").append("<option value='" + especie.IdEspeciePk + "'>" + especie.NombreEspecie + "</option>");
+                        });
+                    }
+                });
+            }
+            else {
+                $("#especie").prop("disabled", true);
+                $("#subespecie").prop("disabled", true);
+            }
+        });
+
+        $("#especie").change(function () {
+            var IdEspeciePk = $(this).val();
+            if (IdEspeciePk) {
+                $("#subespecie").prop("disabled", false);
+
+                $.ajax({
+                    url: "@Url.Action("ObtenerSubespeciesPorEspecies", "Accesion01Model")",
+                    type: "POST",
+                    data: { IdEspeciePk: IdEspeciePk },
+                    success: function (subespecies) {
+                        $("#subespecies").empty().append("<option value=''>--Seleccione una subespecie--</option>");
+                        $.each(subespecies, function (i, subespecie) {
+                            $("#subespecie").append("<option value='" + subespecie.IdSubespeciePk + "'>" + subespecie.NombreSubespecie + "</option>");
+                        });
+                    }
+                });
+            }
+            else {
+                $("#subespecie").prop("disabled", true);
+            }
+        });
+    });
+</script>

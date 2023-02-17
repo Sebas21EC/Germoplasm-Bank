@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\GermoBank\\GermoBank\\GermoBank.csproj": {}
+    "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\GermoBank.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\GermoBank\\GermoBank\\GermoBank.csproj": {
+    "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\GermoBank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\GermoBank\\GermoBank\\GermoBank.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\GermoBank.csproj",
         "projectName": "GermoBank",
-        "projectPath": "C:\\Users\\User\\Desktop\\GermoBank\\GermoBank\\GermoBank.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\GermoBank.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\GermoBank\\GermoBank\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,6 +44,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "DBContext": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -67,6 +71,10 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[7.0.3, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
             }
           },
           "imports": [
