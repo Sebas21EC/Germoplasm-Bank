@@ -7,30 +7,100 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/GermoBank.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/estilo_css.css" asp-append-version="true" />
+
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
+        <nav class="navbar vertical-nav bg-white box-shadow mb-3" id="sidebar">
+            <div class="container-fluid nav-item" style="display: flex; align-items: left;">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">GermoBank</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                              
+                        
+
+                        <li>
+                            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link">
+                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline" style="font-size: 20px;">Accesiones ↓</span>
+                            </a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link "> <span class="d-none d-sm-inline" style="font-size: 16px; text-align: center;">Buscar</span>  </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Accesion01" asp-action="Index">Agregar Accesion</a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="FamiliasTbs" asp-action="Index">Familias</a>
+
+
+
+                         <li>
+                            <a href="#submenu2" data-bs-toggle="collapse" class="nav-link">
+                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline" style="font-size: 20px;">Taxonomia ↓</span>
+                            </a>
+                           <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="FamiliasTbs" asp-action="Index">Familia</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="GenerosTbs" asp-action="Index">Genero</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="EspeciesTbs" asp-action="Index">Especie</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="SubespeciesTbs" asp-action="Index">Subespecie</a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="GenerosTbs" asp-action="Index">Familias</a>
+
+
+
+                            <li>
+                            <a href="#submenu3" data-bs-toggle="collapse" class="nav-link">
+                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline" style="font-size: 20px;">Usuarios ↓</span>
+                            </a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link "> <span class="d-none d-sm-inline" style="font-size: 16px; text-align: center;">Buscar</span>  </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Accesion01" asp-action="Index">Agregar Usuario</a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Accesion01" asp-action="Index">Accesion01</a>
+
+
+
+                        <li class="nav-link">
+                            <a class=" fs-4 bi-speedometer2 ms-1 d-none d-sm-inline" style="font-size: 20px;" asp-area="" asp-controller="GenerosTbs" asp-action="Index">Ayuda</a>
                         </li>
+
+
+                        <li>
+                            <a href="#submenu3" data-bs-toggle="collapse" class="nav-link">
+                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline" style="font-size: 20px;">Contacto ↓</span>
+                            </a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="nav-link "> <span class="d-none d-sm-inline" style="font-size: 16px; text-align: center;">Mas info</span>  </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+
                     </ul>
                 </div>
             </div>

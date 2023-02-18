@@ -283,6 +283,14 @@ C:\Users\User\Desktop\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win\lib\net6
 C:\Users\User\Desktop\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\User\Desktop\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\User\Desktop\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\GermoBank.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\GermoBank.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\GermoBank.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\GermoBank.AssemblyInfo.cs
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\GermoBank.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\GermoBank.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\GermoBank.RazorAssemblyInfo.cache
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\GermoBank.RazorAssemblyInfo.cs
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\appsettings.json
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\GermoBank.staticwebassets.runtime.json
@@ -291,9 +299,16 @@ C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bi
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\GermoBank.runtimeconfig.json
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\GermoBank.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\GermoBank.pdb
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\Dapper.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\Humanizer.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\MessagePack.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\MessagePack.Annotations.dll
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Web.Mvc.dll
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Web.WebPages.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\Microsoft.Build.dll
@@ -345,6 +360,7 @@ C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bi
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\Mono.TextTemplating.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\Newtonsoft.Json.dll
@@ -366,6 +382,7 @@ C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bi
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Composition.Runtime.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Composition.TypedParts.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Data.SqlClient.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Drawing.Common.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Reflection.MetadataLoadContext.dll
@@ -538,20 +555,17 @@ C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bi
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\GermoBank.csproj.AssemblyReference.cache
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\GermoBank.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\GermoBank.AssemblyInfoInputs.cache
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\GermoBank.AssemblyInfo.cs
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\GermoBank.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\GermoBank.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\GermoBank.RazorAssemblyInfo.cache
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\GermoBank.RazorAssemblyInfo.cs
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\staticwebassets\msbuild.GermoBank.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\staticwebassets\msbuild.build.GermoBank.props
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.GermoBank.props
@@ -568,17 +582,3 @@ C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\ob
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\GermoBank.pdb
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\GermoBank.genruntimeconfig.cache
 C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\obj\Debug\net6.0\ref\GermoBank.dll
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Data.SqlClient.dll
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\Dapper.dll
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Web.Mvc.dll
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Web.Razor.dll
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Web.Helpers.dll
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\System.Web.WebPages.dll
-C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll

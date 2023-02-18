@@ -16,8 +16,32 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\User\Desktop\UTN\semestre 4\Proyecto Germoplasma\GermoBank\GermoBank
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/User/Desktop/UTN/semestre 4/Proyecto Germoplasma/GermoBank/GermoBank/Views/Accesion01/Accesion02.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNpb24wMVxBY2Nlc2lvbjAyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/User/Desktop/UTN/semestre 4/Proyecto Germoplasma/GermoBank/GermoBank/Views/Accesion01/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNpb24wMVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/UTN/semestre 4/Proyecto Germoplasma/GermoBank/GermoBank/Views/EspeciesTbs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpZXNUYnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/UTN/semestre 4/Proyecto Germoplasma/GermoBank/GermoBank/Views/EspeciesTbs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpZXNUYnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/UTN/semestre 4/Proyecto Germoplasma/GermoBank/GermoBank/Views/EspeciesTbs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpZXNUYnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/UTN/semestre 4/Proyecto Germoplasma/GermoBank/GermoBank/Views/EspeciesTbs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpZXNUYnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/UTN/semestre 4/Proyecto Germoplasma/GermoBank/GermoBank/Views/EspeciesTbs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXNwZWNpZXNUYnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/Desktop/UTN/semestre 4/Proyecto Germoplasma/GermoBank/GermoBank/Views/FamiliasTbs/Create.cshtml]
@@ -74,6 +98,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/User/Desktop/UTN/semestre 4/Proyecto Germoplasma/GermoBank/GermoBank/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/UTN/semestre 4/Proyecto Germoplasma/GermoBank/GermoBank/Views/SubespeciesTbs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViZXNwZWNpZXNUYnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/UTN/semestre 4/Proyecto Germoplasma/GermoBank/GermoBank/Views/SubespeciesTbs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViZXNwZWNpZXNUYnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/UTN/semestre 4/Proyecto Germoplasma/GermoBank/GermoBank/Views/SubespeciesTbs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViZXNwZWNpZXNUYnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/UTN/semestre 4/Proyecto Germoplasma/GermoBank/GermoBank/Views/SubespeciesTbs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViZXNwZWNpZXNUYnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/UTN/semestre 4/Proyecto Germoplasma/GermoBank/GermoBank/Views/SubespeciesTbs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3ViZXNwZWNpZXNUYnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/Desktop/UTN/semestre 4/Proyecto Germoplasma/GermoBank/GermoBank/Views/_ViewImports.cshtml]

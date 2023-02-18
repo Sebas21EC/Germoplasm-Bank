@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LqPg0CtDTYYhoF6IXlebbffIPdA7bSSq97aAZcPOGF8=",
+  "Hash": "wZzLnq6wSQ5QOdjvoMr9HbF1rGyQufBDKJj0AbAt87c=",
   "Source": "GermoBank",
   "BasePath": "_content/GermoBank",
   "Mode": "Default",
@@ -51,6 +51,23 @@
       "OriginalItemSpec": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\GermoBank.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\estilo_css.css",
+      "SourceId": "GermoBank",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\",
+      "BasePath": "_content/GermoBank",
+      "RelativePath": "css/estilo_css.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\estilo_css.css"
+    },
+    {
       "Identity": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\site.css",
       "SourceId": "GermoBank",
       "SourceType": "Discovered",
@@ -83,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\js\\nuevo.js",
+      "SourceId": "GermoBank",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\",
+      "BasePath": "_content/GermoBank",
+      "RelativePath": "js/nuevo.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\nuevo.js"
     },
     {
       "Identity": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\js\\site.js",

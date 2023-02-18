@@ -5,12 +5,20 @@
       "PackagePath": "staticwebassets\\GermoBank.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\estilo_css.css",
+      "PackagePath": "staticwebassets\\css\\estilo_css.css"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\js\\nuevo.js",
+      "PackagePath": "staticwebassets\\js\\nuevo.js"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\js\\site.js",

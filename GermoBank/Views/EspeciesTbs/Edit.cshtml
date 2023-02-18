@@ -1,0 +1,37 @@
+﻿@model GermoBank.Models.EspeciesTb
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>EspeciesTb</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdEspeciePk" />
+            <div class="form-group">
+                <label asp-for="NombreEspecie" class="control-label"></label>
+                <input asp-for="NombreEspecie" class="form-control" />
+                <span asp-validation-for="NombreEspecie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdGeneroFk" class="control-label"></label>
+                <select asp-for="IdGeneroFk" class="form-control" asp-items="ViewBag.IdGeneroFk"></select>
+                <span asp-validation-for="IdGeneroFk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -9,6 +9,8 @@ using GermoBank.Models.ModelosAuxiliares;
 using Dapper;
 using Microsoft.AspNetCore.Http;
 using System.Text.Json;
+using GermoBank.Datos;
+using System.Data.SqlClient;
 
 namespace GermoBank.Controllers.ControllersPersonalizados
 {
@@ -74,12 +76,6 @@ namespace GermoBank.Controllers.ControllersPersonalizados
             return Json(generos);
         }
 
-
-
-
-
-
-
         [HttpPost]
         public JsonResult ObtenerEspeciesPorGeneros(int idGeneroPk)
         {
@@ -95,6 +91,63 @@ namespace GermoBank.Controllers.ControllersPersonalizados
             List<SubespeciesTb> subespecies = _context.SubespeciesTbs.Where(s => s.IdEspecieFk == idEspeciePk).ToList();
             return Json(subespecies);
         }
+
+        [HttpPost]
+        [Route("ControllersPersonalizados/Accesion01/AgregarAccesion")]
+
+        public IActionResult AgregarAccesion(string subespecie, string nombre_comun, DateTime fecha_recoleccion, bool ejemplar_herbario, bool aislamiento_poblacional, bool cultivos_vecinos)
+        {
+            using (var context = new GermoBankUtnContext())
+            {
+
+              
+
+                var conn = context.Database.GetDbConnection();
+
+                try
+                {
+                    conn.Open();
+
+                    using (var command = conn.CreateCommand())
+                    {
+                        command.CommandText = "AGREGAR_ACCESION_SP";
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // agregar los parametros del procedimiento almacenado
+                        command.Parameters.Add(new NpgsqlParameter("subespecie", subespecie));
+                        command.Parameters.Add(new NpgsqlParameter("nombre_comun", nombre_comun));
+                        command.Parameters.Add(new NpgsqlParameter("ejemplar_herbario", ejemplar_herbario));
+                        command.Parameters.Add(new NpgsqlParameter("aislamiento_poblacional", aislamiento_poblacional));
+                        command.Parameters.Add(new NpgsqlParameter("cultivos_vecinos", cultivos_vecinos));
+                        command.Parameters.Add(new NpgsqlParameter("fecha_recoleccion", fecha_recoleccion));
+
+                        // agregar parametro de salida
+                       /* var returnParam = new NpgsqlParameter("id_accesion_pk", NpgsqlDbType.Bigint);
+                        returnParam.Direction = ParameterDirection.Output;
+                        command.Parameters.Add(returnParam);*/
+
+                        // ejecutar el procedimiento almacenado
+                        command.ExecuteNonQuery();
+
+                        // obtener el valor de retorno del procedimiento almacenado
+                        /*idAccesion = (long)command.Parameters["id_accesion_pk"].Value;*/
+                    }
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
+            return RedirectToAction("Accesion02", "Accesion01");
+            // redirigir al usuario a la pagina de detalles de la nueva accesión
+        }
+        public IActionResult Accesion02()
+        {
+            // código para la vista "OtraVista"
+            return View();
+        }
+
 
     }
 }

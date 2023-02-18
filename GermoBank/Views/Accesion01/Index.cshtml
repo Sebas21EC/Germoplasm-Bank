@@ -3,15 +3,18 @@
     ViewData["Title"] = "Accesion01";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <h1>Accesion01</h1>
 
+<form method="post" action="ControllersPersonalizados/Accesion01/AgregarAccesion">
 <div>
     <label for="familia">Familia:</label>
-    <select id="familia" name="familia"class="form-select form-select-sm">
+    <select id="familia" name="familia" class="form-select form-select-sm">
         <option value="">--Seleccione una familia--</option>
         @foreach (var familia in Model.familia)
         {
@@ -23,56 +26,57 @@
 
 <div>
     <label for="genero">Genero:</label>
-    <select id="genero" name="genero" disabled>
+    <select id="genero" name="genero" disabled class="form-select form-select-sm">
         <option value="">--Seleccione un genero--</option>
     </select>
 </div>
 
 <div>
     <label for="especie">Especie:</label>
-    <select id="especie" name="especie" disabled>
+    <select id="especie" name="especie" disabled class="form-select form-select-sm">
         <option value="">--Seleccione una especie--</option>
     </select>
 </div>
 
 <div>
     <label for="subespecie">Subespecie:</label>
-    <select id="subespecie" name="subespecie" disabled>
+    <select id="subespecie" name="subespecie" disabled class="form-select form-select-sm">
         <option value="">--Seleccione una subespecie--</option>
     </select>
 </div>
 
 <div>
 
-  <label for="name">Nombre Comun: </label>
-  <input type="text" id="name" name="name" placeholder="Nombre comun">
+  <label for="nombre_comun">Nombre Comun: </label>
+        <input type="text" id="nombre_comun" name="nombre_comun" placeholder="Nombre comun">
 </div>
 
 <div>
 
-  <label for="name">Fecha: </label>
-  <input type="date" id="fecha" name="fecha" >
+  <label for="fecha_recoleccion">Fecha: </label>
+        <input type="date" id="fecha_recoleccion" name="fecha_recoleccion">
 </div>
 
 <div>
-    <label for="herbario"> Ejemplar hervario: </label><br>
-    <input type="checkbox" id="herbario" name="herbario" >
+    <label for="ejemplar_hervario"> Ejemplar hervario: </label><br>
+        <input type="checkbox" id="ejemplar_hervario" name="ejemplar_hervario">
 </div>
 
 <div>
-    <label for="aislamiento"> Aislamiento poblacional: </label><br>
-    <input type="checkbox" id="aislamiento" name="aislamiento">
+    <label for="aislamiento_poblacional"> Aislamiento poblacional: </label><br>
+        <input type="checkbox" id="aislamiento_poblacional" name="aislamiento_poblacional">
 </div>
 
 
 <div>
-    <label for="cultivos"> Cultivos cercanos: </label><br>
-    <input type="checkbox" id="cultivos" name="cultivos">
+    <label for="cultivos_vecinos"> Cultivos cercanos: </label><br>
+        <input type="checkbox" id="cultivos_vecinos" name="cultivos_vecinos">
 </div>
 
 
 
-
+    <button type="submit">Enviar</button>
+</form>
 
 
 <script>
