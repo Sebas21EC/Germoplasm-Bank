@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace GermoBank.Models;
 
 public partial class EspeciesTb
 {
     public int IdEspeciePk { get; set; }
-
     public string NombreEspecie { get; set; } = null!;
 
     public int? IdGeneroFk { get; set; }

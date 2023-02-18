@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace GermoBank.Models;
 
@@ -7,9 +8,12 @@ public partial class AccecionesTb
 {
     public string IdAccesionPk { get; set; } = null!;
 
+ 
     public DateOnly FechaRecoleccionAccesion { get; set; }
 
+    
     public string NombreLocalAccesion { get; set; } = null!;
+
 
     public bool AislamientoPoblacional { get; set; }
 

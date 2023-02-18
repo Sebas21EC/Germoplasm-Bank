@@ -18,9 +18,11 @@ namespace GermoBank.Controllers.ControllersPersonalizados
     {
 
         private readonly GermoBankUtnContext _context;
+        private string codigo_accesion;
 
         public Accesion01Controller(GermoBankUtnContext context)
         {
+            codigo_accesion = "";
             _context = context;
         }
 
@@ -30,6 +32,12 @@ namespace GermoBank.Controllers.ControllersPersonalizados
             Accesion01Model modelo = new Accesion01Model();
             modelo.familia = _context.FamiliasTbs.ToList();
             return View(modelo);
+        }
+
+        public IActionResult Accesion02()
+        {
+            // código para la vista "OtraVista"
+            return View();
         }
 
 
@@ -97,56 +105,60 @@ namespace GermoBank.Controllers.ControllersPersonalizados
 
         public IActionResult AgregarAccesion(string subespecie, string nombre_comun, DateTime fecha_recoleccion, bool ejemplar_herbario, bool aislamiento_poblacional, bool cultivos_vecinos)
         {
+
+            Console.WriteLine(subespecie);
+
+             codigo_accesion = "SEBAS-"+ nombre_comun;
             using (var context = new GermoBankUtnContext())
-            {
-
-              
-
-                var conn = context.Database.GetDbConnection();
-
-                try
                 {
-                    conn.Open();
 
-                    using (var command = conn.CreateCommand())
+
+
+                    var conn = context.Database.GetDbConnection();
+
+                    try
                     {
-                        command.CommandText = "AGREGAR_ACCESION_SP";
-                        command.CommandType = CommandType.StoredProcedure;
+                        conn.Open();
+
+                        using (var command = conn.CreateCommand())
+                        {
+                            command.CommandText = "AGREGAR_ACCESION_01_SP";
+                            command.CommandType = CommandType.StoredProcedure;
+
 
                         // agregar los parametros del procedimiento almacenado
+                        command.Parameters.Add(new NpgsqlParameter("codigo_accesion", codigo_accesion));
+                            command.Parameters.Add(new NpgsqlParameter("nombre_comun", nombre_comun));
                         command.Parameters.Add(new NpgsqlParameter("subespecie", subespecie));
-                        command.Parameters.Add(new NpgsqlParameter("nombre_comun", nombre_comun));
                         command.Parameters.Add(new NpgsqlParameter("ejemplar_herbario", ejemplar_herbario));
-                        command.Parameters.Add(new NpgsqlParameter("aislamiento_poblacional", aislamiento_poblacional));
-                        command.Parameters.Add(new NpgsqlParameter("cultivos_vecinos", cultivos_vecinos));
-                        command.Parameters.Add(new NpgsqlParameter("fecha_recoleccion", fecha_recoleccion));
+                            command.Parameters.Add(new NpgsqlParameter("aislamiento_poblacional", aislamiento_poblacional));
+                            command.Parameters.Add(new NpgsqlParameter("cultivos_vecinos", cultivos_vecinos));
+                            command.Parameters.Add(new NpgsqlParameter("fecha_recoleccion", fecha_recoleccion));
 
-                        // agregar parametro de salida
-                       /* var returnParam = new NpgsqlParameter("id_accesion_pk", NpgsqlDbType.Bigint);
-                        returnParam.Direction = ParameterDirection.Output;
-                        command.Parameters.Add(returnParam);*/
+                            // agregar parametro de salida
+                            /* var returnParam = new NpgsqlParameter("id_accesion_pk", NpgsqlDbType.Bigint);
+                             returnParam.Direction = ParameterDirection.Output;
+                             command.Parameters.Add(returnParam);*/
 
-                        // ejecutar el procedimiento almacenado
-                        command.ExecuteNonQuery();
+                            // ejecutar el procedimiento almacenado
+                            command.ExecuteNonQuery();
 
-                        // obtener el valor de retorno del procedimiento almacenado
-                        /*idAccesion = (long)command.Parameters["id_accesion_pk"].Value;*/
+                            // obtener el valor de retorno del procedimiento almacenado
+                            /*idAccesion = (long)command.Parameters["id_accesion_pk"].Value;*/
+                        }
+                    }
+                    finally
+                    {
+                        conn.Close();
                     }
                 }
-                finally
-                {
-                    conn.Close();
-                }
-            }
 
-            return RedirectToAction("Accesion02", "Accesion01");
-            // redirigir al usuario a la pagina de detalles de la nueva accesión
+
+                return RedirectToAction("Accesion02", "Accesion01");
+                // redirigir al usuario a la pagina de detalles de la nueva accesión
+
         }
-        public IActionResult Accesion02()
-        {
-            // código para la vista "OtraVista"
-            return View();
-        }
+
 
 
     }
