@@ -161,5 +161,62 @@ namespace GermoBank.Controllers.ControllersPersonalizados
 
 
 
+
+        public IActionResult AgregarAccesion_02(string nombre_propiedad, string nombre_propietario, string apellido_propietario, string telefono_propietario, string email_propietario,string codigo_parroquia, string calle_principal,string calle_secundaria, string referencia_cercana)
+        {
+
+            Console.WriteLine(nombre_propiedad);
+
+            codigo_accesion = "SEBAS-" + nombre_propiedad;
+            using (var context = new GermoBankUtnContext())
+            {
+
+
+
+                var conn = context.Database.GetDbConnection();
+
+                try
+                {
+                    conn.Open();
+
+                    using (var command = conn.CreateCommand())
+                    {
+                        command.CommandText = "AGREGAR_ACCESION_01_SP";
+                        command.CommandType = CommandType.StoredProcedure;
+
+
+                        // agregar los parametros del procedimiento almacenado
+                        command.Parameters.Add(new NpgsqlParameter("codigo_accesion", codigo_accesion));
+                        command.Parameters.Add(new NpgsqlParameter("nombre_comun", nombre_comun));
+                        command.Parameters.Add(new NpgsqlParameter("subespecie", subespecie));
+                        command.Parameters.Add(new NpgsqlParameter("ejemplar_herbario", ejemplar_herbario));
+                        command.Parameters.Add(new NpgsqlParameter("aislamiento_poblacional", aislamiento_poblacional));
+                        command.Parameters.Add(new NpgsqlParameter("cultivos_vecinos", cultivos_vecinos));
+                        command.Parameters.Add(new NpgsqlParameter("fecha_recoleccion", fecha_recoleccion));
+
+                        // agregar parametro de salida
+                        /* var returnParam = new NpgsqlParameter("id_accesion_pk", NpgsqlDbType.Bigint);
+                         returnParam.Direction = ParameterDirection.Output;
+                         command.Parameters.Add(returnParam);*/
+
+                        // ejecutar el procedimiento almacenado
+                        command.ExecuteNonQuery();
+
+                        // obtener el valor de retorno del procedimiento almacenado
+                        /*idAccesion = (long)command.Parameters["id_accesion_pk"].Value;*/
+                    }
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
+
+            return RedirectToAction("Accesion02", "Accesion01");
+            // redirigir al usuario a la pagina de detalles de la nueva accesión
+
+        }
+
     }
 }
