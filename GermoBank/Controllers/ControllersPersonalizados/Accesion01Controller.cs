@@ -5,6 +5,10 @@ using NpgsqlTypes;
 using System.Data;
 using GermoBank.Models;
 using GermoBank.Models.ModelsPersonalizados;
+using GermoBank.Models.ModelosAuxiliares;
+using Dapper;
+using Microsoft.AspNetCore.Http;
+using System.Text.Json;
 
 namespace GermoBank.Controllers.ControllersPersonalizados
 {
@@ -21,10 +25,8 @@ namespace GermoBank.Controllers.ControllersPersonalizados
 
         public IActionResult Index()
         {
-            var modelo = new Accesion01Model();
-
+            Accesion01Model modelo = new Accesion01Model();
             modelo.familia = _context.FamiliasTbs.ToList();
-
             return View(modelo);
         }
 
@@ -60,35 +62,39 @@ namespace GermoBank.Controllers.ControllersPersonalizados
             return Json(generos);
         }*/
 
-        [HttpPost]
-        public JsonResult ObtenerGeneosPorFamilia(int idFamilia)
-        {
-            var generos = _context.GenerosTbs
-                .FromSqlInterpolated($"SELECT * FROM ObtenerRegionesPorPais({idFamilia})")
-                .ToList();
 
+        [HttpGet]
+        [Route("ControllersPersonalizados/Accesion01/ObtenerGeneosPorFamilia/{IdFamilia}")]
+        public JsonResult ObtenerGeneosPorFamilia(int IdFamilia)
+        {
+            Console.WriteLine(IdFamilia);
+            Console.WriteLine("*****************************************");
+            List<GenerosTb> generos = _context.GenerosTbs.Where(g => g.IdFamiliaFk == IdFamilia).ToList();
+            Console.WriteLine(generos.Count);
             return Json(generos);
         }
 
 
+
+
+
+
+
         [HttpPost]
-            public JsonResult ObtenerEspeciesPorGeneros(int id_generos)
-            {
-                var especies = _context.EspeciesTbs
-                    .FromSqlInterpolated($"SELECT * FROM ObtenerEspeciesPorGeneros({id_generos})")
-                    .ToList();
+        public JsonResult ObtenerEspeciesPorGeneros(int idGeneroPk)
+        {
+            List<EspeciesTb> especies = _context.EspeciesTbs.Where(e => e.IdGeneroFk == idGeneroPk).ToList();
+            return Json(especies);
+        }
 
-                return Json(especies);
-            }
 
-            [HttpPost]
-            public JsonResult ObtenerBarriosPorCiudad(int id_especie)
-            {
-                var subespecie = _context.SubespeciesTbs
-                    .FromSqlInterpolated($"SELECT * FROM ObtenerSubespeciesPorEspecies({id_especie})")
-                    .ToList();
 
-                return Json(subespecie);
-            }
+        [HttpPost]
+        public JsonResult ObtenerSubespeciesPorEspecies(int idEspeciePk)
+        {
+            List<SubespeciesTb> subespecies = _context.SubespeciesTbs.Where(s => s.IdEspecieFk == idEspeciePk).ToList();
+            return Json(subespecies);
+        }
+
     }
 }

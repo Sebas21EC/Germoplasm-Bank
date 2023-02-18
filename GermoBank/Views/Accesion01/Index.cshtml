@@ -3,13 +3,15 @@
     ViewData["Title"] = "Accesion01";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <h1>Accesion01</h1>
 
-<div>s
+<div>
     <label for="familia">Familia:</label>
-    <select id="familia" name="familia">
+    <select id="familia" name="familia"class="form-select form-select-sm">
         <option value="">--Seleccione una familia--</option>
         @foreach (var familia in Model.familia)
         {
@@ -40,6 +42,34 @@
     </select>
 </div>
 
+<div>
+
+  <label for="name">Nombre Comun: </label>
+  <input type="text" id="name" name="name" placeholder="Nombre comun">
+</div>
+
+<div>
+
+  <label for="name">Fecha: </label>
+  <input type="date" id="fecha" name="fecha" >
+</div>
+
+<div>
+    <label for="herbario"> Ejemplar hervario: </label><br>
+    <input type="checkbox" id="herbario" name="herbario" >
+</div>
+
+<div>
+    <label for="aislamiento"> Aislamiento poblacional: </label><br>
+    <input type="checkbox" id="aislamiento" name="aislamiento">
+</div>
+
+
+<div>
+    <label for="cultivos"> Cultivos cercanos: </label><br>
+    <input type="checkbox" id="cultivos" name="cultivos">
+</div>
+
 
 
 
@@ -48,45 +78,50 @@
 <script>
     $(function () {
         $("#familia").change(function () {
-            var IdFamiliaPk = $(this).val();
-            if (IdFamiliaPk) {
+            var IdFamiliaPk = parseInt($(this).val(),10);
+            console.log("Valor seleccionado en #familia: " + IdFamiliaPk);
+            if (IdFamiliaPk) { // verifica si hay un valor seleccionado en el control "familia"
                 $("#genero").prop("disabled", false);
                 $("#especie").prop("disabled", true);
                 $("#subespecie").prop("disabled", true);
 
                 $.ajax({
-                    url: "@Url.Action("ObtenerGeneosPorFamilia", "ControllersPersonalizados/Accesion01Controller")",
-                    type: "POST",
-                    data: { IdFamiliaPk: IdFamiliaPk },
+                    url: 'ControllersPersonalizados/Accesion01/ObtenerGeneosPorFamilia/' + IdFamiliaPk,
+                    type: 'GET',
                     success: function (generos) {
                         $("#genero").empty().append("<option value=''>--Seleccione un genero--</option>");
                         $.each(generos, function (i, genero) {
-                            $("#genero").append("<option value='" + genero.IdGeneroPk + "'>" + genero.NombreGenero + "</option>");
+                            $("#genero").append("<option value='" + genero.idGeneroPk + "'>" + genero.nombreGenero + "</option>");
+                            console.log(genero.IdGeneroPk);
+                            console.log(genero);
                         });
+                        console.log(generos);
                     }
                 });
             }
             else {
+                // deshabilita los controles si no se ha seleccionado una opción válida en "familia"
                 $("#genero").prop("disabled", true);
                 $("#especie").prop("disabled", true);
                 $("#subespecie").prop("disabled", true);
             }
         });
 
+
         $("#genero").change(function () {
             var IdGeneroPk = $(this).val();
-            if (IdGeneroPk {
+            if (IdGeneroPk) {
                 $("#especie").prop("disabled", false);
                 $("#subespecie").prop("disabled", true);
 
                 $.ajax({
-                    url: "@Url.Action("ObtenerEspeciesPorGeneros", "Accesion01Model")",
+                    url: "@Url.Action("ObtenerEspeciesPorGeneros", "Accesion01")",
                     type: "POST",
                     data: { IdGeneroPk: IdGeneroPk },
                     success: function (especies) {
                         $("#especie").empty().append("<option value=''>--Seleccione una especie--</option>");
                         $.each(especies, function (i, especie) {
-                            $("#especie").append("<option value='" + especie.IdEspeciePk + "'>" + especie.NombreEspecie + "</option>");
+                            $("#especie").append("<option value='" + especie.idEspeciePk + "'>" + especie.nombreEspecie + "</option>");
                         });
                     }
                 });
@@ -103,13 +138,13 @@
                 $("#subespecie").prop("disabled", false);
 
                 $.ajax({
-                    url: "@Url.Action("ObtenerSubespeciesPorEspecies", "Accesion01Model")",
+                    url: "@Url.Action("ObtenerSubespeciesPorEspecies", "Accesion01")",
                     type: "POST",
                     data: { IdEspeciePk: IdEspeciePk },
                     success: function (subespecies) {
-                        $("#subespecies").empty().append("<option value=''>--Seleccione una subespecie--</option>");
+                        $("#subespecie").empty().append("<option value=''>--Seleccione una subespecie--</option>");
                         $.each(subespecies, function (i, subespecie) {
-                            $("#subespecie").append("<option value='" + subespecie.IdSubespeciePk + "'>" + subespecie.NombreSubespecie + "</option>");
+                            $("#subespecie").append("<option value='" + subespecie.idSubespeciePk + "'>" + subespecie.nombreSubespecie + "</option>");
                         });
                     }
                 });
