@@ -1,5 +1,4 @@
 ﻿using MessagePack;
-using GermoBank.Models.ModelsPersonalizados;
 using System.ComponentModel.DataAnnotations;
 
 namespace GermoBank.Models.ModelsPersonalizados

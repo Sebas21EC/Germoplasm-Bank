@@ -5,7 +5,6 @@ using NpgsqlTypes;
 using System.Data;
 using GermoBank.Models;
 using GermoBank.Models.ModelsPersonalizados;
-using GermoBank.Models.ModelosAuxiliares;
 using Dapper;
 using Microsoft.AspNetCore.Http;
 using System.Text.Json;
@@ -19,6 +18,7 @@ namespace GermoBank.Controllers.ControllersPersonalizados
 
         private readonly GermoBankUtnContext _context;
         private string codigo_accesion;
+        private string codigo_propiedad;
 
         public Accesion01Controller(GermoBankUtnContext context)
         {
@@ -36,9 +36,16 @@ namespace GermoBank.Controllers.ControllersPersonalizados
 
         public IActionResult Accesion02()
         {
-            // código para la vista "OtraVista"
+            Accesion02Model modelo = new Accesion02Model();
+            modelo.texturasSuelosTbs = _context.TexturasSuelosTbs.ToList();
+            return View(modelo);
+        }
+        public IActionResult Accesion03()
+        {
+
             return View();
         }
+
 
 
         /*
@@ -102,13 +109,16 @@ namespace GermoBank.Controllers.ControllersPersonalizados
 
         [HttpPost]
         [Route("ControllersPersonalizados/Accesion01/AgregarAccesion")]
-
         public IActionResult AgregarAccesion(string subespecie, string nombre_comun, DateTime fecha_recoleccion, bool ejemplar_herbario, bool aislamiento_poblacional, bool cultivos_vecinos)
         {
 
             Console.WriteLine(subespecie);
+            Random num_ram = new Random();
+            int numero = num_ram.Next(100000);
 
-             codigo_accesion = "SEBAS-"+ nombre_comun;
+            codigo_accesion = numero +"-"+ nombre_comun;
+
+            Console.WriteLine(nombre_comun);
             using (var context = new GermoBankUtnContext())
                 {
 
@@ -160,39 +170,43 @@ namespace GermoBank.Controllers.ControllersPersonalizados
         }
 
 
-
-
-        public IActionResult AgregarAccesion_02(string nombre_propiedad, string nombre_propietario, string apellido_propietario, string telefono_propietario, string email_propietario,string codigo_parroquia, string calle_principal,string calle_secundaria, string referencia_cercana)
+        [HttpPost]
+        [Route("Accesion01/AgregarAccesion_02")]
+        public IActionResult AgregarAccesion_02(string codigo_propietario, string nombre_propiedad, string nombre_propietario, string apellido_propietario, string telefono_propietario, string email_propietario, string color_suelo, bool drenaje_suelo, bool erosion_suelo, bool pedregosidad_suelo, string codigo_textura)
         {
-
             Console.WriteLine(nombre_propiedad);
+            Random num_ram = new Random();
+            int numero = num_ram.Next(100000);
 
-            codigo_accesion = "SEBAS-" + nombre_propiedad;
+            this.codigo_propiedad = codigo_propietario + ("-" + numero);
             using (var context = new GermoBankUtnContext())
             {
 
-
-
                 var conn = context.Database.GetDbConnection();
 
-                try
-                {
+              /*  try
+                {*/
                     conn.Open();
 
                     using (var command = conn.CreateCommand())
                     {
-                        command.CommandText = "AGREGAR_ACCESION_01_SP";
+                        command.CommandText = "AGREGAR_ACCESION_02_SP";
                         command.CommandType = CommandType.StoredProcedure;
 
-
                         // agregar los parametros del procedimiento almacenado
-                        command.Parameters.Add(new NpgsqlParameter("codigo_accesion", codigo_accesion));
-                        command.Parameters.Add(new NpgsqlParameter("nombre_comun", nombre_comun));
-                        command.Parameters.Add(new NpgsqlParameter("subespecie", subespecie));
-                        command.Parameters.Add(new NpgsqlParameter("ejemplar_herbario", ejemplar_herbario));
-                        command.Parameters.Add(new NpgsqlParameter("aislamiento_poblacional", aislamiento_poblacional));
-                        command.Parameters.Add(new NpgsqlParameter("cultivos_vecinos", cultivos_vecinos));
-                        command.Parameters.Add(new NpgsqlParameter("fecha_recoleccion", fecha_recoleccion));
+                        command.Parameters.Add(new NpgsqlParameter("codigo_propiedad", codigo_propiedad));
+                        command.Parameters.Add(new NpgsqlParameter("codigo_propietario", ""+numero));
+                        command.Parameters.Add(new NpgsqlParameter("nombre_propiedad", nombre_propiedad));
+                        command.Parameters.Add(new NpgsqlParameter("nombre_propietario", nombre_propietario));
+                        command.Parameters.Add(new NpgsqlParameter("apellido_propietario", apellido_propietario));
+                        command.Parameters.Add(new NpgsqlParameter("telefono_propietario", telefono_propietario));
+                        command.Parameters.Add(new NpgsqlParameter("email_propietario", email_propietario));
+                        command.Parameters.Add(new NpgsqlParameter("color_suelo", color_suelo));
+                        command.Parameters.Add(new NpgsqlParameter("drenaje_suelo", drenaje_suelo));
+                        command.Parameters.Add(new NpgsqlParameter("erosion_suelo", erosion_suelo));
+                        command.Parameters.Add(new NpgsqlParameter("pedregosidad_suelo", pedregosidad_suelo));
+                        command.Parameters.Add(new NpgsqlParameter("codigo_textura", Convert.ToInt32(codigo_textura)));
+
 
                         // agregar parametro de salida
                         /* var returnParam = new NpgsqlParameter("id_accesion_pk", NpgsqlDbType.Bigint);
@@ -205,18 +219,21 @@ namespace GermoBank.Controllers.ControllersPersonalizados
                         // obtener el valor de retorno del procedimiento almacenado
                         /*idAccesion = (long)command.Parameters["id_accesion_pk"].Value;*/
                     }
-                }
+               /* }
                 finally
-                {
+                {*/
                     conn.Close();
-                }
+                /*}*/
             }
 
 
-            return RedirectToAction("Accesion02", "Accesion01");
+            return RedirectToAction("Accesion03", "Accesion01");
             // redirigir al usuario a la pagina de detalles de la nueva accesión
 
+
         }
+
+
 
     }
 }

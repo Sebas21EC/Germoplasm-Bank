@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wZzLnq6wSQ5QOdjvoMr9HbF1rGyQufBDKJj0AbAt87c=",
+  "Hash": "RfD0uJRkQN97RVqpS2cOOhRrZkkMCZCz7xZjsfhgEa8=",
   "Source": "GermoBank",
   "BasePath": "_content/GermoBank",
   "Mode": "Default",
@@ -49,6 +49,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\GermoBank.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\accesion01.css",
+      "SourceId": "GermoBank",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\",
+      "BasePath": "_content/GermoBank",
+      "RelativePath": "css/accesion01.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\accesion01.css"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\buscar_familia.css",
+      "SourceId": "GermoBank",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\",
+      "BasePath": "_content/GermoBank",
+      "RelativePath": "css/buscar_familia.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\buscar_familia.css"
     },
     {
       "Identity": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\estilo_css.css",

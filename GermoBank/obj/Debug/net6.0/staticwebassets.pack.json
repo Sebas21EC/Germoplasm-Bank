@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\GermoBank.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\accesion01.css",
+      "PackagePath": "staticwebassets\\css\\accesion01.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\buscar_familia.css",
+      "PackagePath": "staticwebassets\\css\\buscar_familia.css"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\estilo_css.css",
       "PackagePath": "staticwebassets\\css\\estilo_css.css"
     },

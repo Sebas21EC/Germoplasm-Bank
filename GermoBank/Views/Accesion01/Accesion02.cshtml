@@ -1,4 +1,4 @@
-﻿
+﻿@model GermoBank.Models.ModelsPersonalizados.Accesion02Model;
 @{
     ViewData["Title"] = "Accesion02";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,3 +6,86 @@
 
 <h1>Accesion02</h1>
 
+<form method="post" action="AgregarAccesion_02">
+
+
+    <div>
+
+        <label for="codigo_propietario">codigo propietario: </label>
+        <input type="text" id="codigo_propietario" name="codigo_propietario" placeholder="codigo ropietario">
+    </div>
+
+    <div>
+
+        <label for="nombre_propietario">Nombre propietario: </label>
+        <input type="text" id="nombre_propietario" name="nombre_propietario" placeholder="Nombre propietario">
+    </div>
+
+    <div>
+
+        <label for="apellido_propietario">Apellido propietario: </label>
+        <input type="text" id="apellido_propietario" name="apellido_propietario" placeholder="Apellido propietario">
+    </div>
+
+    <div>
+
+        <label for="telefono_propietario">Telefono: </label>
+        <input type="text" id="telefono_propietario" name="telefono_propietario" placeholder="Phone">
+    </div>
+
+
+    <div>
+
+        <label for="email_propietario">Mail: </label>
+        <input type="text" id="email_propietario" name="email_propietario" placeholder="E-mail">
+    </div>
+
+
+
+    <div>
+
+        <label for="nombre_propiedad">Nombre propietario: </label>
+        <input type="text" id="nombre_propiedad" name="nombre_propiedad" placeholder="Nombre propietario">
+    </div>
+
+
+    <div>
+        <label for="drenaje_suelo"> Drenaje: </label><br>
+        <input type="checkbox" id="drenaje_suelo" name="drenaje_suelo">
+    </div>
+
+    <div>
+        <label for="erosion_suelo"> Erosion: </label><br>
+        <input type="checkbox" id="erosion_suelo" name="erosion_suelo">
+    </div>
+
+    <div>
+        <label for="pedregosidad_suelo"> Pedregosidad: </label><br>
+        <input type="checkbox" id="pedregosidad_suelo" name="pedregosidad_suelo">
+    </div>
+
+
+    <div>
+        <label for="codigo_textura">Textura:</label>
+        <select id="codigo_textura" name="codigo_textura" class="form-select form-select-sm">
+            <option value="">--Seleccione una familia--</option>
+            @foreach (var textura in Model.texturasSuelosTbs)
+            {
+                <option value="@textura.IdTexturaSueloPk">@textura.NombreTexturaSuelo</option>
+            }
+        </select>
+    </div>
+
+    <div>
+
+        <label for="color_suelo">Color suelo: </label>
+        <input type="text" id="color_suelo" name="color_suelo" placeholder="Color">
+    </div>
+
+
+
+    <button type="submit">Enviar</button>
+
+
+
+</form>
