@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using System.Text.Json;
 using GermoBank.Datos;
 using System.Data.SqlClient;
+using System.Security.Principal;
 
 namespace GermoBank.Controllers.ControllersPersonalizados
 {
@@ -41,6 +42,16 @@ namespace GermoBank.Controllers.ControllersPersonalizados
             return View(modelo);
         }
         public IActionResult Accesion03()
+        {
+            Accesion03Model modelo = new Accesion03Model();
+            modelo.provincias = _context.ProvinciasTbs.ToList();
+            modelo.formasGeograficasTbs=_context.FormasGeograficasTbs.ToList();
+            return View(modelo);
+
+
+        }
+
+        public IActionResult Accesion04()
         {
 
             return View();
@@ -116,56 +127,56 @@ namespace GermoBank.Controllers.ControllersPersonalizados
             Random num_ram = new Random();
             int numero = num_ram.Next(100000);
 
-            codigo_accesion = numero +"-"+ nombre_comun;
+            codigo_accesion = numero + "-" + nombre_comun;
 
             Console.WriteLine(nombre_comun);
             using (var context = new GermoBankUtnContext())
+            {
+
+
+
+                var conn = context.Database.GetDbConnection();
+
+                try
                 {
+                    conn.Open();
 
-
-
-                    var conn = context.Database.GetDbConnection();
-
-                    try
+                    using (var command = conn.CreateCommand())
                     {
-                        conn.Open();
-
-                        using (var command = conn.CreateCommand())
-                        {
-                            command.CommandText = "AGREGAR_ACCESION_01_SP";
-                            command.CommandType = CommandType.StoredProcedure;
+                        command.CommandText = "AGREGAR_ACCESION_01_SP";
+                        command.CommandType = CommandType.StoredProcedure;
 
 
                         // agregar los parametros del procedimiento almacenado
                         command.Parameters.Add(new NpgsqlParameter("codigo_accesion", codigo_accesion));
-                            command.Parameters.Add(new NpgsqlParameter("nombre_comun", nombre_comun));
+                        command.Parameters.Add(new NpgsqlParameter("nombre_comun", nombre_comun));
                         command.Parameters.Add(new NpgsqlParameter("subespecie", subespecie));
                         command.Parameters.Add(new NpgsqlParameter("ejemplar_herbario", ejemplar_herbario));
-                            command.Parameters.Add(new NpgsqlParameter("aislamiento_poblacional", aislamiento_poblacional));
-                            command.Parameters.Add(new NpgsqlParameter("cultivos_vecinos", cultivos_vecinos));
-                            command.Parameters.Add(new NpgsqlParameter("fecha_recoleccion", fecha_recoleccion));
+                        command.Parameters.Add(new NpgsqlParameter("aislamiento_poblacional", aislamiento_poblacional));
+                        command.Parameters.Add(new NpgsqlParameter("cultivos_vecinos", cultivos_vecinos));
+                        command.Parameters.Add(new NpgsqlParameter("fecha_recoleccion", fecha_recoleccion));
 
-                            // agregar parametro de salida
-                            /* var returnParam = new NpgsqlParameter("id_accesion_pk", NpgsqlDbType.Bigint);
-                             returnParam.Direction = ParameterDirection.Output;
-                             command.Parameters.Add(returnParam);*/
+                        // agregar parametro de salida
+                        /* var returnParam = new NpgsqlParameter("id_accesion_pk", NpgsqlDbType.Bigint);
+                         returnParam.Direction = ParameterDirection.Output;
+                         command.Parameters.Add(returnParam);*/
 
-                            // ejecutar el procedimiento almacenado
-                            command.ExecuteNonQuery();
+                        // ejecutar el procedimiento almacenado
+                        command.ExecuteNonQuery();
 
-                            // obtener el valor de retorno del procedimiento almacenado
-                            /*idAccesion = (long)command.Parameters["id_accesion_pk"].Value;*/
-                        }
-                    }
-                    finally
-                    {
-                        conn.Close();
+                        // obtener el valor de retorno del procedimiento almacenado
+                        /*idAccesion = (long)command.Parameters["id_accesion_pk"].Value;*/
                     }
                 }
+                finally
+                {
+                    conn.Close();
+                }
+            }
 
 
-                return RedirectToAction("Accesion02", "Accesion01");
-                // redirigir al usuario a la pagina de detalles de la nueva accesión
+            return RedirectToAction("Accesion02", "Accesion01");
+            // redirigir al usuario a la pagina de detalles de la nueva accesión
 
         }
 
@@ -184,45 +195,45 @@ namespace GermoBank.Controllers.ControllersPersonalizados
 
                 var conn = context.Database.GetDbConnection();
 
-              /*  try
-                {*/
-                    conn.Open();
+                /*  try
+                  {*/
+                conn.Open();
 
-                    using (var command = conn.CreateCommand())
-                    {
-                        command.CommandText = "AGREGAR_ACCESION_02_SP";
-                        command.CommandType = CommandType.StoredProcedure;
+                using (var command = conn.CreateCommand())
+                {
+                    command.CommandText = "AGREGAR_ACCESION_02_SP";
+                    command.CommandType = CommandType.StoredProcedure;
 
-                        // agregar los parametros del procedimiento almacenado
-                        command.Parameters.Add(new NpgsqlParameter("codigo_propiedad", codigo_propiedad));
-                        command.Parameters.Add(new NpgsqlParameter("codigo_propietario", ""+numero));
-                        command.Parameters.Add(new NpgsqlParameter("nombre_propiedad", nombre_propiedad));
-                        command.Parameters.Add(new NpgsqlParameter("nombre_propietario", nombre_propietario));
-                        command.Parameters.Add(new NpgsqlParameter("apellido_propietario", apellido_propietario));
-                        command.Parameters.Add(new NpgsqlParameter("telefono_propietario", telefono_propietario));
-                        command.Parameters.Add(new NpgsqlParameter("email_propietario", email_propietario));
-                        command.Parameters.Add(new NpgsqlParameter("color_suelo", color_suelo));
-                        command.Parameters.Add(new NpgsqlParameter("drenaje_suelo", drenaje_suelo));
-                        command.Parameters.Add(new NpgsqlParameter("erosion_suelo", erosion_suelo));
-                        command.Parameters.Add(new NpgsqlParameter("pedregosidad_suelo", pedregosidad_suelo));
-                        command.Parameters.Add(new NpgsqlParameter("codigo_textura", Convert.ToInt32(codigo_textura)));
+                    // agregar los parametros del procedimiento almacenado
+                    command.Parameters.Add(new NpgsqlParameter("codigo_propiedad", codigo_propiedad));
+                    command.Parameters.Add(new NpgsqlParameter("codigo_propietario", "" + numero));
+                    command.Parameters.Add(new NpgsqlParameter("nombre_propiedad", nombre_propiedad));
+                    command.Parameters.Add(new NpgsqlParameter("nombre_propietario", nombre_propietario));
+                    command.Parameters.Add(new NpgsqlParameter("apellido_propietario", apellido_propietario));
+                    command.Parameters.Add(new NpgsqlParameter("telefono_propietario", telefono_propietario));
+                    command.Parameters.Add(new NpgsqlParameter("email_propietario", email_propietario));
+                    command.Parameters.Add(new NpgsqlParameter("color_suelo", color_suelo));
+                    command.Parameters.Add(new NpgsqlParameter("drenaje_suelo", drenaje_suelo));
+                    command.Parameters.Add(new NpgsqlParameter("erosion_suelo", erosion_suelo));
+                    command.Parameters.Add(new NpgsqlParameter("pedregosidad_suelo", pedregosidad_suelo));
+                    command.Parameters.Add(new NpgsqlParameter("codigo_textura", Convert.ToInt32(codigo_textura)));
 
 
-                        // agregar parametro de salida
-                        /* var returnParam = new NpgsqlParameter("id_accesion_pk", NpgsqlDbType.Bigint);
-                         returnParam.Direction = ParameterDirection.Output;
-                         command.Parameters.Add(returnParam);*/
+                    // agregar parametro de salida
+                    /* var returnParam = new NpgsqlParameter("id_accesion_pk", NpgsqlDbType.Bigint);
+                     returnParam.Direction = ParameterDirection.Output;
+                     command.Parameters.Add(returnParam);*/
 
-                        // ejecutar el procedimiento almacenado
-                        command.ExecuteNonQuery();
+                    // ejecutar el procedimiento almacenado
+                    command.ExecuteNonQuery();
 
-                        // obtener el valor de retorno del procedimiento almacenado
-                        /*idAccesion = (long)command.Parameters["id_accesion_pk"].Value;*/
-                    }
-               /* }
-                finally
-                {*/
-                    conn.Close();
+                    // obtener el valor de retorno del procedimiento almacenado
+                    /*idAccesion = (long)command.Parameters["id_accesion_pk"].Value;*/
+                }
+                /* }
+                 finally
+                 {*/
+                conn.Close();
                 /*}*/
             }
 
@@ -233,6 +244,81 @@ namespace GermoBank.Controllers.ControllersPersonalizados
 
         }
 
+
+
+
+
+        [HttpPost]
+        public JsonResult ObtenerCantonesPorProvincia(string IdProvinciaPk)
+        {
+            Console.WriteLine(IdProvinciaPk);
+            Console.WriteLine("**********-------------------------------********");
+            List<CantonesTb> cantones = _context.CantonesTbs.Where(g => g.IdProvinciaFk == IdProvinciaPk).ToList();
+            Console.WriteLine(cantones.Count);
+            return Json(cantones);
+        }
+
+        [HttpPost]
+        public JsonResult ObtenerParroquiasPorCantone(String IdCantonPk)
+        {
+            List<ParroquiasTb> parroquias = _context.ParroquiasTbs.Where(e => e.IdCantonFk == IdCantonPk).ToList();
+            return Json(parroquias);
+        }
+
+
+
+        [HttpPost]
+        [Route("Accesion01/AgregarAccesion_03")]
+        public IActionResult AgregarAccesion_03(string codigo_parroquia, string c_principal, string c_secundaria, string referencia, string latitud, string altitud, string longitud, string temperatura, string humedad, string luz, int codigo_forma_geograficas)
+        {
+            Console.WriteLine(codigo_parroquia);
+            Console.WriteLine(codigo_forma_geograficas);
+            Console.WriteLine(humedad);
+            Console.WriteLine(temperatura);
+
+            using (var context = new GermoBankUtnContext())
+            {
+
+                var conn = context.Database.GetDbConnection();
+
+                /*  try
+                  {*/
+                conn.Open();
+
+                using (var command = conn.CreateCommand())
+                {
+                    command.CommandText = "AGREGAR_ACCESION_03_SP";
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // agregar los parametros del procedimiento almacenado
+                    command.Parameters.Add(new NpgsqlParameter("codigo_parroquia", codigo_parroquia));
+                    command.Parameters.Add(new NpgsqlParameter("c_principal", c_principal));
+                    command.Parameters.Add(new NpgsqlParameter("c_secundaria", c_secundaria));
+                    command.Parameters.Add(new NpgsqlParameter("referencia", referencia));
+                    command.Parameters.Add(new NpgsqlParameter("latitud", latitud));
+                    command.Parameters.Add(new NpgsqlParameter("altitud", altitud));
+                    command.Parameters.Add(new NpgsqlParameter("longitud", longitud));
+                    command.Parameters.Add(new NpgsqlParameter("temperatura", temperatura));
+                    command.Parameters.Add(new NpgsqlParameter("humedad", humedad));
+                    command.Parameters.Add(new NpgsqlParameter("luz", luz));
+                    command.Parameters.Add(new NpgsqlParameter("codigo_forma_geografica", codigo_forma_geograficas));
+                    command.ExecuteNonQuery();
+
+
+                }
+                /* }
+                 finally
+                 {*/
+                conn.Close();
+                /*}*/
+            }
+
+
+            return RedirectToAction("Accesion04", "Accesion01");
+            // redirigir al usuario a la pagina de detalles de la nueva accesión
+
+
+        }
 
 
     }

@@ -1,8 +1,186 @@
-﻿
+﻿@model GermoBank.Models.ModelsPersonalizados.Accesion03Model;
 @{
     ViewData["Title"] = "Accesion03";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
 
 <h1>Accesiones03</h1>
 
+<form method="post" action="AgregarAccesion_03">
+
+
+    <div class="input-field">
+        <label for="provincia">Provincias:</label>
+        <select id="provincia"
+                name="provincia"
+                class="form-select form-select-sm">
+
+            <option value="">--Seleccione una provincia--</option>
+            @foreach (var provincia in Model.provincias)
+            {           
+                <option value="@provincia.IdProvinciaPk">
+                    @provincia.NombreProvincia
+                </option>
+            }   
+        </select>
+    </div>
+
+        <div class="input-field">
+            <label for="canton">Cantones:</label>
+         <select id="canton" name="canton" disabled>
+
+           <option value="">--Seleccione un cantón--</option>
+
+            </select>
+        </div> 
+
+
+        <div class="input-field">
+            <label for="codigo_parroquia">Parroquias:</label>
+        <select id="codigo_parroquia" name="codigo_parroquia" disabled>
+
+           <option value="">--Seleccione una parroquia--</option>
+
+            </select>
+        </div>
+
+
+    <div>
+
+        <label for="c_principal">Calle Principal: </label>
+        <input type="text" id="c_principal" name="c_principal" placeholder="Calle Principal">
+    </div>  
+    
+    <div>
+
+        <label for="c_secundaria">Calle Secundaria: </label>
+        <input type="text" id="c_secundaria" name="c_secundaria" placeholder="Calle Secundaria">
+    </div>
+        
+    <div>
+
+        <label for="referencia">Referenicia: </label>
+        <input type="text" id="referencia" name="referencia" placeholder="Referenicia">
+    </div>
+
+    <div>
+
+        <label for="latitud">Latitud: </label>
+        <input type="text" id="latitud" name="latitud" placeholder="Latitud">
+    </div>
+
+    <div>
+
+        <label for="altitud">Altitud: </label>
+        <input type="text" id="altitud" name="altitud" placeholder="Altitud">
+    </div>
+
+    <div>
+
+        <label for="longitud">Longitud: </label>
+        <input type="text" id="longitud" name="longitud" placeholder="Longitud">
+    </div>
+
+
+    <div class="input-field">
+        <label for="codigo_forma_geograficas">Forma geografica:</label>
+        <select id="codigo_forma_geograficas"
+                name="codigo_forma_geograficas"
+                class="form-select form-select-sm">
+
+            <option value="">--Seleccione una forma_geograficas--</option>
+            @foreach (var forma_geografica in Model.formasGeograficasTbs)
+            {           
+                <option value="@forma_geografica.IdFormaGeograficaPk">
+                    @forma_geografica.NombreFormaGeografica
+                </option>
+            }   
+        </select>
+    </div>
+
+
+    <div>
+        <label for="temperatura">Temperatura: </label>
+        <input type="number" step="any" id="temperatura" name="temperatura" placeholder="Longitud">
+    </div>
+    
+    <div>
+        <label for="humedad">Humedad: </label>
+        <input type="number" step="any" id="humedad" name="humedad" placeholder="Humedad">
+    </div>
+    <div>
+
+        <label for="luz">Luz: </label>
+        <input type="text" id="luz" name="luz" placeholder="Luz">
+    </div>
+
+    <div class="buttons">
+        <button class="submit">
+            <span class="btnText">Submit</span>
+            <i class="uil uil-navigator"></i>
+        </button>
+    </div>
+    </div>
+
+
+</form>
+
+
+<script>
+    $(function () {
+        $("#provincia").change(function () {
+            var IdProvinciaPk = $(this).val();
+            console.log("Valor seleccionado en #provincia: " + IdProvinciaPk);
+            if (IdProvinciaPk) { // verifica si hay un valor seleccionado en el control "familia"
+                $("#canton").prop("disabled", false);
+                $("#codigo_parroquia").prop("disabled", true);
+
+                $.ajax({
+                    url: "@Url.Action("ObtenerCantonesPorProvincia", "Accesion01")",
+                    type: 'Post',
+                    data: { IdProvinciaPk: IdProvinciaPk },
+                    success: function (cantones) {
+                        $("#canton").empty().append("<option value=''>--Seleccione un canton--</option>");
+                        $.each(cantones, function (i, canton) {
+                            $("#canton").append("<option value='" + canton.idCantonPk + "'>" + canton.nombreCanton + "</option>");
+                            console.log(canton.IdCantonPk);
+                            console.log(canton);
+                        });
+                        console.log(cantones);
+                    }
+                });
+            }
+            else {
+                // deshabilita los controles si no se ha seleccionado una opción válida en "familia"
+                $("#canton").prop("disabled", true);
+                $("#codigo_parroquia").prop("disabled", true);
+            }
+        });
+
+
+        $("#canton").change(function () {
+            var IdCantonPk = $(this).val();
+            if (IdCantonPk) {
+                $("#codigo_parroquia").prop("disabled", false);
+                $.ajax({
+                    url: "@Url.Action("ObtenerParroquiasPorCantone", "Accesion01")",
+                    type: "POST",
+                    data: { IdCantonPk: IdCantonPk },
+                    success: function (parroquias) {
+                        $("#codigo_parroquia").empty().append("<option value=''>--Seleccione una parroquia--</option>");
+                        $.each(parroquias, function (i, parroquia) {
+                            $("#codigo_parroquia").append("<option value='" + parroquia.idParroquiaPk + "'>" + parroquia.nombreParroquia + "</option>");
+                        });
+                    }
+                });
+            }
+            else {
+                $("#codigo_parroquia").prop("disabled", true);
+            }
+        });
+
+    });
+</script>
