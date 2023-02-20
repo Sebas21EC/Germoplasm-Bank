@@ -3,12 +3,12 @@
     ViewData["Title"] = "Accesion01";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link rel="stylesheet" href="~/css/accesion01.css" />
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <div class="container">
     <header>ingresar accesion</header>
-    <form method="post" action="ControllersPersonalizados/Accesion01/AgregarAccesion">
+    <form method="post" action="ControllersPersonalizados/Accesion01/AgregarAccesion" style="height:100%;  width: 100%;">
         <div class="form first">
             <div class="detail personal">
                 <div class="fields">
@@ -16,7 +16,7 @@
                         <label for="familia">Familia:</label>
                         <select id="familia"
                                 name="familia"
-                                class="form-select form-select-sm">
+                                class="form-select form-select-sm danger ">
 
                             <option value="">--Seleccione una familia--</option>
                             @foreach (var familia in Model.familia)
@@ -29,7 +29,7 @@
                     </div>
                     <div class="input-field">
                         <label for="genero">Genero:</label>
-                        <select id="genero" name="genero" disabled>
+                        <select id="genero" name="genero" class="danger" disabled>
 
                             <option value="">--Seleccione un genero--</option>
 
@@ -41,7 +41,7 @@
                 <div class="fields">
                     <div class="input-field">
                         <label for="especie">Especie:</label>
-                        <select id="especie" name="especie" disabled>
+                        <select id="especie" name="especie" class="danger" disabled>
 
                             <option value="">--Seleccione una especie--</option>
 
@@ -112,7 +112,7 @@
 
             <div class="buttons">
                 <button class="submit">
-                    <span class="btnText">Submit</span>
+                    <span class="btnText">SIGUIENTE</span>
                     <i class="uil uil-navigator"></i>
                 </button>
             </div>

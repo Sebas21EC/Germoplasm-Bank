@@ -6,3 +6,140 @@
 
 <h1>Accesion04</h1>
 
+
+
+<form method="post" action="AgregarAccesion_04">
+
+    <div class="input-field">
+        <label for="codigo_estado">Estado germoplasma:</label>
+        <select id="codigo_estado"
+                name="codigo_estado"
+                class="form-select form-select-sm">
+
+            <option value="">--Seleccione un estado--</option>
+            @foreach (var estado in Model.estadosGermoplasmas)
+            {           
+                <option value="@estado.IdEstadoGermoplasmaPk">
+                    @estado.NombreEstadoGermoplasma
+                </option>
+            }   
+        </select>
+    </div>
+
+
+     <div class="input-field">
+        <label for="codigo_muestra">Muestra:</label>
+        <select id="codigo_muestra"
+                name="codigo_muestra"
+                class="form-select form-select-sm">
+
+            <option value="">--Seleccione una muestra--</option>
+            @foreach (var muestra in Model.metodosMuestreos)
+            {           
+                    <option value="@muestra.IdMetodoMuestraPk">
+                    @muestra.NombreMetodoMuestra
+                    </option>
+            }   
+    </select>
+    </div>
+
+
+
+    <div class="input-field">
+        <label for="fecha_sie">Fecha siembra: </label>
+        <div>
+            <input type="date" id="fecha_sie" name="fecha_sie" />
+        </div>
+    </div>
+
+    <div class="input-field">
+        <label for="fecha_cos">Fecha cosecha: </label>
+        <div>
+            <input type="date" id="fecha_cos" name="fecha_cos" />
+        </div>
+    </div>
+
+
+    <div class="input-field">
+        <label for="fecha_flo">Fecha floracion: </label>
+        <div>
+            <input type="date" id="fecha_flo" name="fecha_flo" />
+        </div>
+    </div>
+
+    <div class="input-field">
+        <label for="fecha_fru">Fecha siembra: </label>
+        <div>
+            <input type="date" id="fecha_fru" name="fecha_fru" />
+        </div>
+    </div>
+
+
+    <div class="input-field">
+        <label for="codigo_plaga">Plaga:</label>
+        <select id="codigo_plaga"
+                name="codigo_plaga"
+                class="form-select form-select-sm">
+
+            <option value="">--Seleccione plaga--</option>
+            @foreach (var plaga in Model.plagasEnfermedades)
+            {           
+                <option value="@plaga.IdPlagaEnfermedadPk">
+                    @plaga.NombrePlagaEnfermedad
+                </option>
+            }   
+        </select>
+    </div>
+
+     <div class="input-field">
+        <label for="codigo_uso">uso:</label>
+        <select id="codigo_uso"
+                name="codigo_uso"
+                class="form-select form-select-sm">
+
+            <option value="">--Seleccione uso--</option>
+            @foreach (var uso in Model.usos)
+            {           
+                    <option value="@uso.IdUsoPk">
+                    @uso.NombreUso
+                    </option>
+            }   
+    </select>
+    </div>
+
+    <div class="input-field">
+        <label for="codigo_practica">Practica cultural:</label>
+        <select id="codigo_practica"
+                name="codigo_practica"
+                class="form-select form-select-sm">
+
+            <option value="">--Seleccione practica cultural--</option>
+            @foreach (var practica in Model.practicasCulturales)
+            {           
+                <option value="@practica.IdPracticaCulturalPk">
+                    @practica.NombrePracticaCultural
+                </option>
+            }   
+        </select>
+    </div>
+
+
+    <div class="input-field">
+        <label for="observacion">Observacion: </label>
+        <div>
+            <input type="text" id="observacion" name="observacion" />
+        </div>
+    </div>
+
+
+
+
+    <div class="buttons">
+        <button class="submit">
+            <span class="btnText">Submit</span>
+            <i class="uil uil-navigator"></i>
+        </button>
+    </div>
+
+    </form>
+

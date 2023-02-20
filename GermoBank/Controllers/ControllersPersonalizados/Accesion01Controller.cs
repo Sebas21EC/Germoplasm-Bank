@@ -53,8 +53,17 @@ namespace GermoBank.Controllers.ControllersPersonalizados
 
         public IActionResult Accesion04()
         {
+            Accesion04Model modelo = new Accesion04Model();
+            modelo.estadosGermoplasmas=_context.EstadosGermoplasmasTbs.ToList();
+            modelo.metodosMuestreos=_context.MetodosMuestreosTbs.ToList();
+            modelo.plagasEnfermedades = _context.PlagasEnfermedadesTbs.ToList();
+            modelo.usos=_context.UsosTbs.ToList();
+            modelo.practicasCulturales=_context.PracticasCulturalesTbs.ToList();
+            return View(modelo);
+        }
 
-            return View();
+        public IActionResult AccesionView() { 
+        return View();
         }
 
 
@@ -320,6 +329,59 @@ namespace GermoBank.Controllers.ControllersPersonalizados
 
         }
 
+
+
+        [HttpPost]
+        [Route("Accesion01/AgregarAccesion_04")]
+        public IActionResult AgregarAccesion_04(int codigo_estado, int codigo_muestra, DateTime fecha_sie, DateTime fecha_cos, DateTime fecha_flo, DateTime fecha_fru, int codigo_plaga, int codigo_uso, int codigo_practica, string observacion)
+        {
+            Console.WriteLine(codigo_estado);
+            Console.WriteLine(fecha_sie);
+            Console.WriteLine(codigo_muestra);
+            Console.WriteLine(observacion);
+
+            using (var context = new GermoBankUtnContext())
+            {
+
+                var conn = context.Database.GetDbConnection();
+
+                /*  try
+                  {*/
+                conn.Open();
+
+                using (var command = conn.CreateCommand())
+                {
+                    command.CommandText = "AGREGAR_ACCESION_04_SP";
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // agregar los parametros del procedimiento almacenado
+                    command.Parameters.Add(new NpgsqlParameter("codigo_estado", codigo_estado));
+                    command.Parameters.Add(new NpgsqlParameter("codigo_muestra", codigo_muestra));
+                    command.Parameters.Add(new NpgsqlParameter("fecha_sie", fecha_sie));
+                    command.Parameters.Add(new NpgsqlParameter("fecha_cos", fecha_cos));
+                    command.Parameters.Add(new NpgsqlParameter("fecha_flo", fecha_flo));
+                    command.Parameters.Add(new NpgsqlParameter("fecha_fru", fecha_fru));
+                    command.Parameters.Add(new NpgsqlParameter("codigo_plaga", codigo_plaga));
+                    command.Parameters.Add(new NpgsqlParameter("codigo_uso", codigo_uso));
+                    command.Parameters.Add(new NpgsqlParameter("codigo_practica", codigo_practica));
+                    command.Parameters.Add(new NpgsqlParameter("observacion", observacion));
+                    command.ExecuteNonQuery();
+
+
+                }
+                /* }
+                 finally
+                 {*/
+                conn.Close();
+                /*}*/
+            }
+
+
+            return RedirectToAction("AccesionView", "Accesion01");
+            // redirigir al usuario a la pagina de detalles de la nueva accesión
+
+
+        }
 
     }
 }

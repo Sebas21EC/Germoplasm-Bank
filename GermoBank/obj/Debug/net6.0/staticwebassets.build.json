@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RfD0uJRkQN97RVqpS2cOOhRrZkkMCZCz7xZjsfhgEa8=",
+  "Hash": "dZn8UKRhcZ65B8Exdyen7H64NASe3FEQSlBss2c7aD4=",
   "Source": "GermoBank",
   "BasePath": "_content/GermoBank",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\accesion01.css"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\Accesion02.css",
+      "SourceId": "GermoBank",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\",
+      "BasePath": "_content/GermoBank",
+      "RelativePath": "css/Accesion02.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Accesion02.css"
     },
     {
       "Identity": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\buscar_familia.css",

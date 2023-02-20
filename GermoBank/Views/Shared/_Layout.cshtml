@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="~/GermoBank.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/estilo_css.css" asp-append-version="true" />
 
-    <link rel="stylesheet" href="~/css/accesion01.css" />
-    <link rel="stylesheet" href="~/css/buscador_familias.css" />
+    <link rel="stylesheet" href="~/css/buscador_familia.css" />
     <link rel="stylesheet" href="~/js/nuevo.js" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,14 +19,23 @@
 
 </head>
 <body>
-    
-    <div id="mySidenav" class="sidenav" style="width:0;height:0; margin:0px;">
 
-
+    <div id="mySidenav" class="sidenav">
         <ul>
+            <li class="nav-item" style="display: flex; align-items:left;">
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                    <div style="display: flex; flex-direction: column; justify-content: center;">
+                        <span style="font-size: 20px; font-family: Days One; color:white;mix-blend-mode: normal; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);align-items: left;">GERMOBANK</span>
+                        <span style="font-size: 20px; font-family: Days One; color:white;mix-blend-mode: normal; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);align-items: cebter;">UTN</span>
+                    </div>
+
+                </a>
+
+            </li>
             <li>
                 <a href="#submenu1" data-bs-toggle="collapse" class="nav-link">
-                    <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline" style="font-size: 20px;">ACCESIONES</span>
+
+                    <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline" style="font-size: 20px;">ACCESIONES ↓</span>
                 </a>
                 <ul class="collapse  nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                     <li class="w-100">
@@ -39,10 +47,10 @@
                 </ul>
             </li>
             <li>
-                <a href="#submenu4" data-bs-toggle="collapse" class="nav-link" class="carro">
-                    <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline" style="font-size: 20px;">TAXONOMIA</span>
+                <a href="#submenu2" data-bs-toggle="collapse" class="nav-link carro">
+                    <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline" style="font-size: 20px;">TAXONOMIA↓</span>
                 </a>
-                <ul class="collapse  nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
+                <ul class="collapse  nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                     <li class="w-100">
                         <a class="nav-link text-dark" asp-area="" asp-controller="FamiliasTbs" asp-action="Index">Familia</a>
                     </li>
@@ -58,10 +66,10 @@
                 </ul>
             </li>
             <li>
-                <a href="#submenu2" data-bs-toggle="collapse" class="nav-link">
-                    <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline" style="font-size: 20px;">USUARIOS</span>
+                <a href="#submenu3" data-bs-toggle="collapse" class="nav-link">
+                    <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline" style="font-size: 20px;">USUARIOS↓</span>
                 </a>
-                <ul class="collapse  nav flex-column ms-1" id="submenu" data-bs-parent="#menu">
+                <ul class="collapse  nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                     <li class="w-100">
                         <a href="#" class="nav-link "> <span class="d-none d-sm-inline" style="font-size: 16px;">Buscar</span>  </a>
                     </li>
@@ -76,17 +84,15 @@
                 </a>
             </li>
             <li>
-                <a href="#submenu3" data-bs-toggle="collapse" class="nav-link">
-                    <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline" style="font-size: 20px;">CONTACTO</span>
+                <a href="#submenu4" data-bs-toggle="collapse" class="nav-link">
+                    <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline" style="font-size: 20px;">CONTACTO↓</span>
                 </a>
-                <ul class="collapse  nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                <ul class="collapse  nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
                     <li class="w-100">
                         <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline" style="font-size: 16px;">Medios de comunicacion</span> </a>
                     </li>
                 </ul>
             </li>
-
-
         </ul>
     </div>
 
@@ -97,14 +103,10 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - GermoBank - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>

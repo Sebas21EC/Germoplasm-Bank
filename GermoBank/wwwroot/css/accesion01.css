@@ -1,13 +1,7 @@
 ﻿
+/*accesiones 01*/
 @import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
 
 .container {
     z-index: 1;
@@ -54,7 +48,7 @@
 
     .container form {
         position: relative;
-        margin-top: 5px;
+        margin-top: 20px;
         min-height: 600px;
         overflow: hidden;
         left: 80px;
@@ -63,6 +57,7 @@
         .container form .form {
             position: absolute;
             transition: 0.3s ease;
+            margin-top: 40px;
         }
 
 form.secActive .form.second {
@@ -77,21 +72,13 @@ form.secActive .form.first {
     transform: translateX(-100%);
 }
 
-.container form .title {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 16px;
-    font-weight: 500;
-    margin: 6px 0;
-    color: #333;
-}
 
 .container form .fields {
     display: flex;
     align-items: left;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 form .fields .input-field {
@@ -99,20 +86,21 @@ form .fields .input-field {
     width: calc(100% / 3 - 15px);
     flex-direction: column;
     margin: 0;
+    margin-top: 8px;
 }
 
 .input-field label {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 100;
     color: #2e2e2e;
     font-family: 'Inter', sans-serif;
     margin-top: 0.2px;
-    width: auto;
+    width: 100%;
 }
 
 .input-field input, select {
     outline: none;
-    font-size: 17px;
+    font-size: 20px;
     color: #333;
     border-radius: 5px;
     border: 1px solid #aaa;
@@ -130,7 +118,7 @@ form .fields .input-field {
     .input-field input[type="date"] {
         color: #707070;
         width: 350px;
-        margin-top: 5px;
+        margin-top: 6px;
         margin-bottom: 5px;
     }
 
@@ -204,13 +192,14 @@ form .buttons {
     width: 31%;
     float: right;
     clear: right;
-    display: flex; /* change to flex */
-    flex-direction: row; /* add this */
+    display: flex;
+    margin-left: 5px;
+    flex-direction: row; /* change to column */
 }
 
     .details2 .fields {
-        display: flex; /* add this */
-        flex-direction: column; /* add this */
+        display: flex;
+        flex-direction: column;
         margin-top: 10px;
         margin-bottom: 0px;
         margin-left: 0px;
@@ -218,29 +207,32 @@ form .buttons {
     }
 
         .details2 .fields .input-field {
-            display: flex; /* add this */
-            align-items: center; /* add this */
-            margin-left: 32px;
+            display: flex;
+            align-items: left;
+            margin-left: 5px; /* change to 0 */
             width: auto;
         }
 
             .details2 .fields .input-field .label {
-                display: inline-block; /* change to inline-block */
-
-                margin-right: 10px; /* add some space between label and input */
+                display: inline-block;
+                margin-right: 10px;
+                text-align: left; /* add this */
+                margin-top: 5px;
             }
 
             .details2 .fields .input-field div {
-                display: flex; /* change to flex */
-                align-items: center; /* add this */
+                display: flex;
+                align-items: left;
                 margin-top: 2px;
             }
 
             .details2 .fields .input-field .div input {
-                display: inline-block; /* change to inline-block */
-                margin-top: 0px; /* change to 0px */
+                display: inline-block;
+                margin-top: 0px;
+                align-content: right; /* add this */
+                flex-direction: row;
+                margin-left: 2px:
             }
-
 
 .izqui {
     width: 50%;
@@ -263,9 +255,10 @@ form .buttons {
         }
 
 input:invalid {
-    border: 2px solid red;
+    border: 2px solid;
 }
 
 input:valid {
-    border: 2px solid green;
+    border: 2px solid;
 }
+
