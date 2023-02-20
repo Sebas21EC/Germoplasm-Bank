@@ -79,9 +79,8 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="fs-4 bi-house"></i> <span style="font-size: 20px;">AYUDA</span>
-                </a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Ayuda">Ayuda</a>
+
             </li>
             <li>
                 <a href="#submenu4" data-bs-toggle="collapse" class="nav-link">
@@ -89,7 +88,7 @@
                 </a>
                 <ul class="collapse  nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
                     <li class="w-100">
-                        <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline" style="font-size: 16px;">Medios de comunicacion</span> </a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contacto">Medios de comunicacion</a>
                     </li>
                 </ul>
             </li>
@@ -97,8 +96,8 @@
     </div>
 
 
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="container" >
+        <main role="main" >
             @RenderBody()
         </main>
     </div>

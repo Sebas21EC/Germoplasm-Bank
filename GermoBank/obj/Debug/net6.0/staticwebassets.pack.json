@@ -9,12 +9,32 @@
       "PackagePath": "staticwebassets\\css\\Accesion02.css"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\Accesion03.css",
+      "PackagePath": "staticwebassets\\css\\Accesion03.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\Accesion04.css",
+      "PackagePath": "staticwebassets\\css\\Accesion04.css"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\accesion01.css",
       "PackagePath": "staticwebassets\\css\\accesion01.css"
     },
     {
+      "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\ayuda.css",
+      "PackagePath": "staticwebassets\\css\\ayuda.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\bienvenido.css",
+      "PackagePath": "staticwebassets\\css\\bienvenido.css"
+    },
+    {
       "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\buscar_familia.css",
       "PackagePath": "staticwebassets\\css\\buscar_familia.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\contacto.css",
+      "PackagePath": "staticwebassets\\css\\contacto.css"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\css\\estilo_css.css",
@@ -27,6 +47,30 @@
     {
       "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\img\\celular.png",
+      "PackagePath": "staticwebassets\\img\\celular.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\img\\contacto 1.png",
+      "PackagePath": "staticwebassets\\img\\contacto 1.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\img\\gota1.png",
+      "PackagePath": "staticwebassets\\img\\gota1.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\img\\integridad.png",
+      "PackagePath": "staticwebassets\\img\\integridad.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\img\\liderazgo.png",
+      "PackagePath": "staticwebassets\\img\\liderazgo.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\img\\responsabilidad.png",
+      "PackagePath": "staticwebassets\\img\\responsabilidad.png"
     },
     {
       "Id": "C:\\Users\\User\\Desktop\\UTN\\semestre 4\\Proyecto Germoplasma\\GermoBank\\GermoBank\\wwwroot\\js\\nuevo.js",

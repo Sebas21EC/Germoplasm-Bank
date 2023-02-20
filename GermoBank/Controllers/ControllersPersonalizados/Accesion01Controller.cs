@@ -41,13 +41,14 @@ namespace GermoBank.Controllers.ControllersPersonalizados
             modelo.texturasSuelosTbs = _context.TexturasSuelosTbs.ToList();
             return View(modelo);
         }
+
+
         public IActionResult Accesion03()
         {
             Accesion03Model modelo = new Accesion03Model();
             modelo.provincias = _context.ProvinciasTbs.ToList();
             modelo.formasGeograficasTbs=_context.FormasGeograficasTbs.ToList();
             return View(modelo);
-
 
         }
 

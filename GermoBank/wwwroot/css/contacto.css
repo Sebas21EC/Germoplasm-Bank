@@ -1,0 +1,242 @@
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Nunito:wght@300&display=swap');
+
+h1 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 711px;
+    height: 108px;
+    left: 257px;
+    top: 32px;
+    font-family: 'Days One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 76px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    mix-blend-mode: normal;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#Cerrar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+    position: absolute;
+    width: 162px;
+    height: 57px;
+    left: 1257px;
+    top: 29px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px 24px;
+    gap: 10px;
+    width: 151px;
+    height: 56px;
+    background: #51730F;
+    border-radius: 8px;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    /* Body/Body1/Regular */
+
+    font-family: 'Inter';
+    color: #FBFBFB;
+}
+
+#contacto {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    position: absolute;
+    width: 562px;
+    height: 607px;
+    left: 230px;
+    top: 135px;
+}
+
+.table {
+    box-sizing: border-box;
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    position: absolute;
+    width: 260px;
+    height: 161px;
+    left: 844px;
+    top: 351px;
+    border: 1px solid #000000;
+}
+
+#nombre {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 10px;
+    width: 260px;
+    height: 52px;
+    background: #C5A880;
+    box-shadow: inset 0px -2px 0px #E3E5E8;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    width: 228px;
+    height: 20px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 125% */
+
+    text-align: center;
+    color: #000000;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+#info1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 14px 16px;
+    gap: 10px;
+    width: 260px;
+    height: 48px;
+    background: #FFFFFF;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.correo {
+    box-sizing: border-box;
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    position: absolute;
+    width: 272px;
+    height: 161px;
+    left: 1104px;
+    top: 351px;
+    border: 1px solid #000000;
+}
+
+#elec {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 10px;
+    background: #C5A880;
+    box-shadow: inset 0px -2px 0px #E3E5E8;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    width: 240px;
+    height: 20px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 125% */
+
+
+    color: #000000;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+#dir {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 14px 16px;
+    gap: 10px;
+    width: 250px;
+    height: 48px;
+    background: #FFFFFF;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+#llamada {
+    position: absolute;
+    width: 232px;
+    height: 186px;
+    left: 1038px;
+    top: 692px;
+}
+
+#p1 {
+    position: absolute;
+    width: 519px;
+    height: 60px;
+    left: 480px;
+    top: 742px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 20px;
+    /* or 56% */
+
+    text-align: center;
+    color: #000000;
+}
+
+#p2 {
+    position: absolute;
+    width: 441px;
+    height: 60px;
+    left: 519px;
+    top: 842px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 20px;
+    /* or 56% */
+
+    text-align: center;
+    color: #000000;
+}

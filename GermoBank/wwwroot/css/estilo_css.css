@@ -2,7 +2,7 @@
 .sidenav {
     height: 100%;
     width: 250px;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     top: 0;
     left: 0;
@@ -20,7 +20,7 @@
         text-decoration: none;
         font-size: 15px;
         color: #fffdfd;
-        display: block;
+        display: absolute;
         transition: 0.3s;
     }
 

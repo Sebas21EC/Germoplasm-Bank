@@ -3,130 +3,180 @@
     ViewData["Title"] = "Accesion03";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<link rel="stylesheet" href="~/css/Accesion03.css" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-
-
-<h1>Accesiones03</h1>
-
-<form method="post" action="AgregarAccesion_03">
-
-
-    <div class="input-field">
-        <label for="provincia">Provincias:</label>
-        <select id="provincia"
-                name="provincia"
-                class="form-select form-select-sm">
-
-            <option value="">--Seleccione una provincia--</option>
-            @foreach (var provincia in Model.provincias)
-            {           
-                <option value="@provincia.IdProvinciaPk">
-                    @provincia.NombreProvincia
-                </option>
-            }   
-        </select>
-    </div>
-
-        <div class="input-field">
-            <label for="canton">Cantones:</label>
-         <select id="canton" name="canton" disabled>
-
-           <option value="">--Seleccione un cantón--</option>
-
-            </select>
-        </div> 
-
-
-        <div class="input-field">
-            <label for="codigo_parroquia">Parroquias:</label>
-        <select id="codigo_parroquia" name="codigo_parroquia" disabled>
-
-           <option value="">--Seleccione una parroquia--</option>
-
-            </select>
-        </div>
-
-
+<div class="container">
     <div>
-
-        <label for="c_principal">Calle Principal: </label>
-        <input type="text" id="c_principal" name="c_principal" placeholder="Calle Principal">
-    </div>  
-    
-    <div>
-
-        <label for="c_secundaria">Calle Secundaria: </label>
-        <input type="text" id="c_secundaria" name="c_secundaria" placeholder="Calle Secundaria">
+        <header class="header2">agregar accesion</header>
     </div>
-        
-    <div>
+    <div class="caja3">
+        <form method="post" action="AgregarAccesion_03" style="margin-left:250px; height:100%; width:100%;">
+            <div class="acce3-caja1">
+                <h1>Datos de localidad:</h1>
+                <div class="fields">
+                    <div class="input-field">
+                        <label for="provincia">Provincias:</label>
+                        <select id="provincia"
+                                name="provincia"
+                                class="form-select form-select-sm">
+                            <option value="">--Seleccione una provincia--</option>
+                            @foreach (var provincia in Model.provincias)
+                            {           
+                                <option value="@provincia.IdProvinciaPk">
+                                    @provincia.NombreProvincia
+                                </option>
+                            }   
+                        </select>
+                    </div>
 
-        <label for="referencia">Referenicia: </label>
-        <input type="text" id="referencia" name="referencia" placeholder="Referenicia">
+                    <div class="input-field">
+                        <label for="canton">Cantones:</label>
+                        <select id="canton" name="canton" disabled>
+                            <option value="">--Seleccione un cantón--</option>
+                        </select>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="codigo_parroquia">Parroquias:</label>
+                        <select id="codigo_parroquia" name="codigo_parroquia" disabled>
+                            <option value="">--Seleccione una parroquia--</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="acce3-caja2">
+                <div class="sub1-caja2">
+                    <div class="fields">
+                        <div class="input-field">
+                            <div>
+                                <label for="c_principal">Calle Principal: </label>
+                                <input type="text"
+                                       id="c_principal"
+                                       name="c_principal"
+                                       placeholder="Calle Principal"
+                                       required />
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <div>
+                                <label for="c_secundaria">Calle Secundaria: </label>
+                                <input type="text"
+                                       id="c_secundaria"
+                                       name="c_secundaria"
+                                       placeholder="Calle Secundaria"
+                                       required />
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <div>
+                                <label for="referencia">Referenicia: </label>
+                                <input type="text"
+                                       id="referencia"
+                                       name="referencia"
+                                       placeholder="Referenicia"
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub2-caja2">
+                    <div class="fields">
+                        <div class="input-field">
+                            <div>
+                                <label for="latitud">Latitud: </label>
+                                <input type="text"
+                                       id="latitud"
+                                       name="latitud"
+                                       placeholder="Latitud"
+                                       required />
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <div>
+                                <label for="altitud">Altitud: </label>
+                                <input type="text"
+                                       id="altitud"
+                                       name="altitud"
+                                       placeholder="Altitud"
+                                       required />
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <div>
+                                <label for="longitud">Longitud: </label>
+                                <input type="text"
+                                       id="longitud"
+                                       name="longitud"
+                                       placeholder="Longitud"
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="input-field">
+                            <label for="codigo_forma_geograficas">Forma geografica:</label>
+                            <select id="codigo_forma_geograficas"
+                                    name="codigo_forma_geograficas"
+                                    class="form-select form-select-sm">
+                                <option value="">
+                                    --Seleccione una forma_geograficas--
+                                </option>
+                                @foreach (var forma_geografica in
+                                Model.formasGeograficasTbs)
+                                {           
+                                    <option value="@forma_geografica.IdFormaGeograficaPk">
+                                        @forma_geografica.NombreFormaGeografica
+                                    </option>
+                                }   
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <div>
+                                <label for="temperatura">Temperatura: </label>
+                                <input type="number"
+                                       step="any"
+                                       id="temperatura"
+                                       name="temperatura"
+                                       placeholder="Longitud"
+                                       required />
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <div>
+                                <label for="humedad">Humedad: </label>
+                                <input type="number"
+                                       step="any"
+                                       id="humedad"
+                                       name="humedad"
+                                       placeholder="Humedad"
+                                       required />
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <div>
+                                <label for="luz">Luz: </label>
+                                <input type="text"
+                                       id="luz"
+                                       name="luz"
+                                       placeholder="Luz"
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
-
-    <div>
-
-        <label for="latitud">Latitud: </label>
-        <input type="number" step="any" id="latitud" name="latitud" placeholder="Latitud">
-    </div>
-
-    <div>
-
-        <label for="altitud">Altitud: </label>
-        <input type="number" step="any" id="altitud" name="altitud" placeholder="Altitud">
-    </div>
-
-    <div>
-
-        <label for="longitud">Longitud: </label>
-        <input type="number" step="any" id="longitud" name="longitud" placeholder="Longitud">
-    </div>
-
-
-    <div class="input-field">
-        <label for="codigo_forma_geograficas">Forma geografica:</label>
-        <select id="codigo_forma_geograficas"
-                name="codigo_forma_geograficas"
-                class="form-select form-select-sm">
-
-            <option value="">--Seleccione una forma_geograficas--</option>
-            @foreach (var forma_geografica in Model.formasGeograficasTbs)
-            {           
-                <option value="@forma_geografica.IdFormaGeograficaPk">
-                    @forma_geografica.NombreFormaGeografica
-                </option>
-            }   
-        </select>
-    </div>
-
-
-    <div>
-        <label for="temperatura">Temperatura: </label>
-        <input type="number" step="any" id="temperatura" name="temperatura" placeholder="Longitud">
-    </div>
-    
-    <div>
-        <label for="humedad">Humedad: </label>
-        <input type="number" step="any" id="humedad" name="humedad" placeholder="Humedad">
-    </div>
-    <div>
-
-        <label for="luz">Luz: </label>
-        <input type="text" id="luz" name="luz" placeholder="Luz">
-    </div>
-
     <div class="buttons">
         <button class="submit">
-            <span class="btnText">Submit</span>
+            <span class="btnText">SIGUIENTE</span>
             <i class="uil uil-navigator"></i>
         </button>
     </div>
 
-
-</form>
-
+</div>
 
 <script>
     $(function () {
