@@ -1,0 +1,201 @@
+﻿@using GermoBank.Models.ModelsPersonalizados;
+@model List<AccesionesModel> ;
+@{
+    ViewData["Title"] = "ObtenerAccesion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div style="margin-left:250px; margin-top:50px;">
+
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-header">Accesión</div>
+                <div class="card-body">
+                    @foreach (var item in Model)
+                    {
+                        <p> <b>Nombre Común: </b>@item.nombre_local_accesion </p>
+                        <p> <b>Codigo accesión: </b>@item.id_accesion_pk</p>
+                        <p>  <b>Fecha de registro: </b>@item.fecha_ingreso</p>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-header">Taxonomía</div>
+                <div class="card-body">
+                    @foreach (var item in Model)
+                    {
+                        <p> <b>Familia: </b>@item.nombre_familia </p>
+                        <p> <b>Genero: </b>@item.nombre_genero</p>
+                        <p>  <b>Especie: </b>@item.nombre_especie</p>
+                        <p>  <b>Subespecie: </b>@item.nombre_subespecie</p>
+                    }
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">Dato de reclector: </div>
+                <div class="card-body">
+                    @foreach (var item in Model)
+                    {
+                        <h5>Institución</h5>
+                        <p> <b>Institución: </b>@item.nombre_familia </p>
+                        <p> <b>Detalles: </b>@item.nombre_genero</p>
+                        <h5>Colector</h5>
+                        <p>  <b>Nombre: </b>@item.primer_nombre_colector</p>
+                        <p>  <b>Apellido: </b>@item.primer_apellido_colector</p>
+                        <p>  <b>Telefono: </b>@item.telefono_colecto</p>
+                        <p>  <b>Email: </b>@item.email_colector</p>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">Antecedentes: </div>
+                <div class="card-body">
+                    @foreach (var item in Model)
+                    {
+                        <p> <b>Uso: </b>@item.nombre_uso </p>
+                        <p> <b>Prácticas culturales: </b>@item.nombre_practica_cultural</p>
+                        <p>  <b>Plagas/enfermedades: </b>@item.nombre_plaga_enfermedad</p>
+                        <p>  <b>Fecha siembra: </b>@item.fecha_siembra</p>
+                        <p>  <b>Fecha cosecha: </b>@item.fecha_cosecha</p>
+                        <p>  <b>Fecha floracion: </b>@item.fecha_floracion</p>
+                        <p>  <b>Fecha frutuación: </b>@item.fecha_fructuacion</p>
+                        <p>  <b>Oncervasión: </b>@item.observacion_antecedente</p>
+                    }
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-header">Datos de la propiedad</div>
+                <div class="card-body">
+                    @foreach (var item in Model)
+                    {
+                        <h4>Propiedad</h4>
+                        <p> <b>Nombre propiedad: </b>@item.nombre_propiedad </p>
+                        <h4>Propietario</h4>
+                        <p> <b>Nombre: </b>@item.nombre_propietario</p>
+                        <p>  <b>Apellido: </b>@item.apellido_propietario</p>
+                        <p>  <b>telefono: </b>@item.telefono_propietario</p>
+                        <p>  <b>mail: </b>@item.email_propietario</p>
+                    }
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-header">Ubicación</div>
+                <div class="card-body">
+                    @foreach (var item in Model)
+                    {
+                        <p> <b>País: </b>@item.nombre_pais </p>
+                        <p> <b>Provincia: </b>@item.nombre_provincia</p>
+                        <p>  <b>Cantón: </b>@item.nombre_canton</p>
+                        <p>  <b>Parroquia: </b>@item.nombre_parroquia</p>
+                        <p>  <b>Calle principal: </b>@item.calle_principal</p>
+                        <p>  <b>Calle secundaria: </b>@item.calle_secundaria</p>
+                        <p>  <b>Referencia: </b>@item.referencia_direcion</p>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-header">Localidad</div>
+                <div class="card-body">
+                    @foreach (var item in Model)
+                    {
+                        <p> <b>Altitud: </b>@item.altitud_propiedad </p>
+                        <p> <b>Latitud: </b>@item.latitud_propiedad</p>
+                        <p>  <b>Longitud: </b>@item.longitud_propiedad</p>
+                        <p>  <b>Forma geográfica: </b>@item.nombre_forma_geografica</p>
+                        <p>  <b>Luz: </b>@item.luz</p>
+                        <p>  <b>Temperatura: </b>@item.temperatura_clima °</p>
+                        <p>  <b>Humedad: </b>@item.humedad_clima %</p>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-header">Suelo</div>
+                <div class="card-body">
+                    @foreach (var item in Model)
+                    {
+                        <p> <b>Textura: </b>@item.nombre_textura_suelo </p>
+                        <p> <b>Color: </b>@item.color</p>
+                        <p>
+                            <b>Drenaje:</b>
+                            @if (item.drenaje_suelo)
+                            {
+                                <span>Sí</span>
+                            }
+                            else
+                            {
+                                <span>No</span>
+                            }
+                        </p>
+                        <p>
+                            <b>Erosión:</b>
+                            @if (item.erosion_suelo)
+                            {
+                                <span>Sí</span>
+                            }
+                            else
+                            {
+                                <span>No</span>
+                            }
+                        </p>
+                        <p>
+                            <b>Pegregosidad:</b>
+                            @if (item.pedregosidad_suelo)
+                            {
+                                <span>Sí</span>
+                            }
+                            else
+                            {
+                                <span>No</span>
+                            }
+                        </p>
+
+                    }
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-header">Mas detalles</div>
+                <div class="card-body">
+                    @foreach (var item in Model)
+                    {
+                        <p> <b>Estado Germoplasma: </b>@item.nombre_estado_germoplasma </p>
+                        <p> <b>Metodo de muestreo: </b>@item.nombre_metodo_muestra</p>
+                    }
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

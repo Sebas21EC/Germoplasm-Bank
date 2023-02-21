@@ -10,8 +10,8 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.NombreGenero)
@@ -19,24 +19,25 @@
             <th>
                 @Html.DisplayNameFor(model => model.IdFamiliaFkNavigation)
             </th>
-            <th></th>
+            <th class="col-2 text-center">  Acciones</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombreGenero)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdFamiliaFkNavigation.IdFamiliaPk)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdGeneroPk">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdGeneroPk">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdGeneroPk">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.NombreGenero)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.IdFamiliaFkNavigation.NombreFamilia)
+                    </td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.IdGeneroPk">Editar</a>
+                        <a class="btn btn-secondary btn-sm" asp-action="Details" asp-route-id="@item.IdGeneroPk">Detalles</a>
+                        <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.IdGeneroPk">Eliminar</a>
+                    </td>
+                </tr>
+        }
     </tbody>
 </table>

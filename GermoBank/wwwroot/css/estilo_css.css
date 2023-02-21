@@ -1,68 +1,99 @@
-﻿
-.sidenav {
-    height: 100%;
+﻿@import url('https://fonts.google.com/specimen/Bree+Serif');
+
+
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+#sidebar {
     width: 250px;
-    position: absolute;
-    z-index: 1;
+    position: fixed;
     top: 0;
     left: 0;
+    height: 100vh;
+    z-index: 999;
     background-color: #648C12;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    font-family: bree serif;
-    font-size: 15PX;
-    margin-left: 0px;
+    color: #fff;
+    transition: all 0.3s;
 }
 
-    .sidenav a {
-        padding: 2px 2px 2px 10px;
-        text-decoration: none;
-        font-size: 15px;
-        color: #fffdfd;
-        display: absolute;
-        transition: 0.3s;
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+
+#sidebar .sidebar-header a {
+    padding: 20px;
+    font-family: 'Days One';
+    background-color: #648C12;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    background-color: #648C12;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    color: white;
+    font-family: 'Bree Serif';
+}
+
+    #sidebar ul li a:hover {
+        background-color: #7f984e;
+        color: black;
     }
 
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #648C12;
+}
 
-        .sidenav a:hover {
-            color: #f1f1f1;
-        }
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #648C12;
+}
 
-    .sidenav .closebtn {
-        position: absolute;
-        top: 0;
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+
+    #sidebar.active {
+        margin-left: 0;
     }
-
-#main {
-    transition: margin-left .5s;
-    padding: 16px;
 }
-
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-
-        .sidenav a {
-            font-size: 18px;
-        }
-}
-
-.img {
-    float: left;
-}
-
-
-/*
-*
-* ==========================================
-* FOR DEMO PURPOSE
-* ==========================================
-*
-*/
-
-

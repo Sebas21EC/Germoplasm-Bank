@@ -5,147 +5,154 @@
 }
 <link rel="stylesheet" href="~/css/Accesion02.css" />
 
+<div style="margin-left:250px; margin-top:50px;">
 
-<div class="container">
+    <header class="header2">agregar accesion</header>
 
-<header class="header2">agregar accesion</header>
-
-<form method="post" action="AgregarAccesion_02">
-    <div class="container-main">
-        <div class="CONTAINER-2">
-            <h1>Propietario</h1>
-            <div class="fields">
-
-                <div class="input-field">
-                    <div>
-                        <label for="codigo_propietario">Codigo propietario: </label>
-                        <input type="text"
-                               id="codigo_propietario"
-                               name="codigo_propietario"
-                               placeholder="codigo ropietario"
-                               required />
+    <form method="post" action="AgregarAccesion_02">
+        <div class="row g-5">
+            <div class="col-12 col-md 6 col-lg-6 col-sm-8">
+                <h1>Propietario</h1>
+                <div class="card border-0">
+                    <div class="fields">
+                        <div class="input-field">
+                            <div>
+                                <label for="codigo_propietario">Codigo propietario: </label>
+                                <input type="text"
+                                       id="codigo_propietario"
+                                       name="codigo_propietario"
+                                       placeholder="codigo ropietario"
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="input-field">
+                            <div>
+                                <label for="nombre_propietario">Nombre propietario: </label>
+                                <input type="text"
+                                       id="nombre_propietario"
+                                       name="nombre_propietario"
+                                       placeholder="Nombre propietario"
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="input-field">
+                            <div>
+                                <label for="apellido_propietario">
+                                    Apellido propietario:
+                                </label>
+                                <input type="text"
+                                       id="apellido_propietario"
+                                       name="apellido_propietario"
+                                       placeholder="Apellido propietario"
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="input-field">
+                            <div>
+                                <label for="telefono_propietario">Telefono: </label>
+                                <input type="text"
+                                       id="telefono_propietario"
+                                       name="telefono_propietario"
+                                       placeholder="Phone"
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fields">
+                        <div class="input-field">
+                            <div>
+                                <label for="email_propietario">Mail: </label>
+                                <input type="text"
+                                       id="email_propietario"
+                                       name="email_propietario"
+                                       placeholder="E-mail" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="fields">
-                <div class="input-field">
-                    <div>
-                        <label for="nombre_propietario">Nombre propietario: </label>
-                        <input type="text"
-                               id="nombre_propietario"
-                               name="nombre_propietario"
-                               placeholder="Nombre propietario"
-                               required />
+            <div class="col-12 col-md 6 col-lg-6 col-sm-8">
+                <h1>Propiedad</h1>
+                <div class="card border-0">
+                    <div class="fields">
+                        <div class="input-field">
+                            <div>
+                                <label for="nombre_propiedad">Nombre propiedad: </label>
+                                <input type="text"
+                                       id="nombre_propiedad"
+                                       name="nombre_propiedad"
+                                       placeholder="Nombre propietario"
+                                       required />
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="fields">
-                <div class="input-field">
-                    <div>
-                        <label for="apellido_propietario">Apellido propietario: </label>
-                        <input type="text"
-                               id="apellido_propietario"
-                               name="apellido_propietario"
-                               placeholder="Apellido propietario"
-                               required />
+                    <h1>Suelo</h1>
+                    <div class="fields">
+                        <div class="input-field">
+                            <div>
+                                <label for="drenaje_suelo"> Drenaje: </label><br />
+                                <input type="checkbox"
+                                       id="drenaje_suelo"
+                                       name="drenaje_suelo" />
+                            </div>
+
+                            <div>
+                                <label for="erosion_suelo"> Erosion: </label><br />
+                                <input type="checkbox"
+                                       id="erosion_suelo"
+                                       name="erosion_suelo" />
+                            </div>
+
+                            <div>
+                                <label for="pedregosidad_suelo"> Pedregosidad: </label><br />
+                                <input type="checkbox"
+                                       id="pedregosidad_suelo"
+                                       name="pedregosidad_suelo" />
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="fields">
-                <div class="input-field">
-                    <div>
-                        <label for="telefono_propietario">Telefono: </label>
-                        <input type="text"
-                               id="telefono_propietario"
-                               name="telefono_propietario"
-                               placeholder="Phone"
-                               required />
+                    <div class="fields">
+                        <div class="input-field">
+                            <div>
+                                <label for="codigo_textura">Textura:</label>
+                                <select id="codigo_textura"
+                                        name="codigo_textura"
+                                        class="form-select form-select-sm">
+                                    <option value="">--Seleccione una familia--</option>
+                                    @foreach (var textura in Model.texturasSuelosTbs)
+                                    {
+                                        <option value="@textura.IdTexturaSueloPk">
+                                            @textura.NombreTexturaSuelo
+                                        </option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="fields">
-                <div class="input-field">
-                    <div>
-                        <label for="email_propietario">Mail: </label>
-                        <input type="text"
-                               id="email_propietario"
-                               name="email_propietario"
-                               placeholder="E-mail" />
+                    <div class="fields">
+                        <div class="input-field">
+                            <div>
+                                <label for="color_suelo">Color suelo: </label>
+                                <input type="text"
+                                       id="color_suelo"
+                                       name="color_suelo"
+                                       placeholder="Color" />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="CONTAINER-3">
-            <h1>Propiedad</h1>
-            <div class="fields">
-                <div class="input-field">
-                    <div>
-                        <label for="nombre_propiedad">Nombre propiedad: </label>
-                        <input type="text"
-                               id="nombre_propiedad"
-                               name="nombre_propiedad"
-                               placeholder="Nombre propietario"
-                               required />
-                    </div>
-                </div>
-            </div>
-            <h1>Suelo</h1>
-            <div class="fields">
-                <div class="input-field">
-                    <div>
-                        <label for="drenaje_suelo"> Drenaje: </label><br />
-                        <input type="checkbox"
-                               id="drenaje_suelo"
-                               name="drenaje_suelo" />
-                    </div>
-
-                    <div>
-                        <label for="erosion_suelo"> Erosion: </label><br />
-                        <input type="checkbox"
-                               id="erosion_suelo"
-                               name="erosion_suelo" />
-                    </div>
-
-                    <div>
-                        <label for="pedregosidad_suelo"> Pedregosidad: </label><br />
-                        <input type="checkbox"
-                               id="pedregosidad_suelo"
-                               name="pedregosidad_suelo" />
-                    </div>
-                </div>
-            </div>
-            <div class="fields">
-                <div class="input-field">
-                    <div>
-                        <label for="codigo_textura">Textura:</label>
-                        <select id="codigo_textura"
-                                name="codigo_textura"
-                                class="form-select form-select-sm">
-                            <option value="">--Seleccione una familia--</option>
-                            @foreach (var textura in Model.texturasSuelosTbs)
-                            {
-                                <option value="@textura.IdTexturaSueloPk">
-                                    @textura.NombreTexturaSuelo
-                                </option>
-                            }
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="fields">
-                <div class="input-field">
-                    <div>
-                        <label for="color_suelo">Color suelo: </label>
-                        <input type="text"
-                               id="color_suelo"
-                               name="color_suelo"
-                               placeholder="Color" />
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <button type="submit">SIGUIENTE</button>
-</form>
+        <button type="submit">SIGUIENTE</button>
+    </form>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>

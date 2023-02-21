@@ -70,7 +70,7 @@ namespace GermoBank.Controllers.ControllersPersonalizados
 
 
 
-        public IActionResult ListarAccesiones()
+        public IActionResult UltimaAccesion()
         {
             Console.WriteLine("LLegando a funcion");
 
@@ -172,6 +172,7 @@ namespace GermoBank.Controllers.ControllersPersonalizados
                             Console.WriteLine(resultado.id_accesion_pk+"--------------");
                         }
                         Console.WriteLine("Fuera de While");
+                        conn.Close();
 
                     }
                 }
@@ -179,12 +180,227 @@ namespace GermoBank.Controllers.ControllersPersonalizados
             return View(resultados);
         }
 
-        public IActionResult ObtenerAccesion()
+
+
+        public IActionResult ListarAccesiones()
         {
-            var oLista = _accecionDatos.ObtenerAccesion();
-            return View(oLista);
+            Console.WriteLine("LLegando a funcion");
+
+            List<AccesionesModel> resultados = new List<AccesionesModel>();
+            using (var conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=GermoBank_UTN;User Id=postgres;Password=root;"))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand("SELECT " +
+                    "nombre_local_accesion, codigo_acc, fecha_ing," +
+                    "nombre_fam, nombre_gen,nombre_esp,nombre_subes," +
+                    "nombre_inst,detalle_inst,primer_nombre_col,primer_apellido_col,telefono_col,email_col," +
+                    "nombre_us,nombre_practica_cul,nombre_plaga_enf,fecha_sie,fecha_cos,fecha_flo,fecha_fru,observacion_ant," +
+                    "nombre_pro,nombre_prop,apellido_prop,telefono_prop,email_prop," +
+                    "nombre_pai,nombre_prov,nombre_can,nombre_parr,calle_prin,calle_secu,referencia_dir," +
+                    "latitud_pro,altitud_pro,longitud_pro,nombre_forma_geo,luz,temperatura_cli,humedad_cli," +
+                    "nombre_textura_sue,col,drenaje_sue,erosion_sue,pedregosidad_sue," +
+                    "nombre_estado_germoplasma,nombre_metodo_muestra " +
+                    " FROM LISTAR_ACCESIONES();", conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        Console.WriteLine("Número de filas devueltas: " + reader.FieldCount);
+                        Console.WriteLine("Antes de While");
+                        while (reader.Read())
+                        {
+                            Console.WriteLine("Dentro del while");
+                            AccesionesModel resultado = new AccesionesModel
+                            {
+
+                                nombre_local_accesion = reader.GetString(0),
+                                id_accesion_pk = reader.GetString(1),
+                                fecha_ingreso = reader.GetDateTime(2),
+
+                                /*taxonomia*/
+                                nombre_familia = reader.GetString(3),
+                                nombre_genero = reader.GetString(4),
+                                nombre_especie = reader.GetString(5),
+                                nombre_subespecie = reader.GetString(6),
+
+                                /*recolector*/
+                                nombre_instituto = reader.GetString(7),
+                                detalle_instituto = reader.GetString(8),
+                                primer_nombre_colector = reader.GetString(9),
+                                primer_apellido_colector = reader.GetString(10),
+                                telefono_colecto = reader.GetString(11),
+                                email_colector = reader.GetString(12),
+
+                                /*antecedentes*/
+                                nombre_uso = reader.GetString(13),
+                                nombre_practica_cultural = reader.GetString(14),
+                                nombre_plaga_enfermedad = reader.GetString(15),
+                                fecha_siembra = reader.GetDateTime(16),
+                                fecha_cosecha = reader.GetDateTime(17),
+                                fecha_floracion = reader.GetDateTime(18),
+                                fecha_fructuacion = reader.GetDateTime(19),
+                                observacion_antecedente = reader.GetString(20),
+
+
+                                /*propiedad*/
+                                nombre_propiedad = reader.GetString(21),
+                                nombre_propietario = reader.GetString(22),
+                                apellido_propietario = reader.GetString(23),
+                                telefono_propietario = reader.GetString(24),
+                                email_propietario = reader.GetString(25),
+
+
+                                /*ubicacion*/
+                                nombre_pais = reader.GetString(26),
+                                nombre_provincia = reader.GetString(27),
+                                nombre_canton = reader.GetString(28),
+                                nombre_parroquia = reader.GetString(29),
+                                calle_principal = reader.GetString(30),
+                                calle_secundaria = reader.GetString(31),
+                                referencia_direcion = reader.GetString(32),
+
+                                /*detalles de la localidad*/
+                                latitud_propiedad = reader.GetString(33),
+                                altitud_propiedad = reader.GetString(34),
+                                longitud_propiedad = reader.GetString(35),
+                                nombre_forma_geografica = reader.GetString(36),
+                                luz = reader.GetString(37),
+                                temperatura_clima = reader.GetString(38),
+                                humedad_clima = reader.GetString(39),
+
+                                /*suelo*/
+                                nombre_textura_suelo = reader.GetString(40),
+                                color = reader.GetString(41),
+                                drenaje_suelo = reader.GetBoolean(42),
+                                erosion_suelo = reader.GetBoolean(43),
+                                pedregosidad_suelo = reader.GetBoolean(44),
+
+                                /*mas detalles */
+                                nombre_estado_germoplasma = reader.GetString(45),
+                                nombre_metodo_muestra = reader.GetString(46)
+
+                                // Añade más propiedades según los datos que devuelva tu función
+                            };
+                            resultados.Add(resultado);
+                            Console.WriteLine(resultado.id_accesion_pk + "--------------");
+                        }
+                        Console.WriteLine("Fuera de While");
+                        conn.Close();
+
+                    }
+                }
+            }
+            return View(resultados);
         }
 
+
+        public IActionResult ObtenerAccesion(string IdAccesionPk)
+        {
+            Console.WriteLine("LLegando a funcion");
+
+            List<AccesionesModel> resultados = new List<AccesionesModel>();
+            using (var conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=GermoBank_UTN;User Id=postgres;Password=root;"))
+            {
+                conn.Open();
+                using (var cmd = new NpgsqlCommand("SELECT " +
+                    "nombre_local_accesion, codigo_acc, fecha_ing," +
+                    "nombre_fam, nombre_gen,nombre_esp,nombre_subes," +
+                    "nombre_inst,detalle_inst,primer_nombre_col,primer_apellido_col,telefono_col,email_col," +
+                    "nombre_us,nombre_practica_cul,nombre_plaga_enf,fecha_sie,fecha_cos,fecha_flo,fecha_fru,observacion_ant," +
+                    "nombre_pro,nombre_prop,apellido_prop,telefono_prop,email_prop," +
+                    "nombre_pai,nombre_prov,nombre_can,nombre_parr,calle_prin,calle_secu,referencia_dir," +
+                    "latitud_pro,altitud_pro,longitud_pro,nombre_forma_geo,luz,temperatura_cli,humedad_cli," +
+                    "nombre_textura_sue,col,drenaje_sue,erosion_sue,pedregosidad_sue," +
+                    "nombre_estado_germoplasma,nombre_metodo_muestra " +
+                    " FROM ACCESION_ULTIMA();", conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        Console.WriteLine("Número de filas devueltas: " + reader.FieldCount);
+                        Console.WriteLine("Antes de While");
+                        while (reader.Read())
+                        {
+                            Console.WriteLine("Dentro del while");
+                            AccesionesModel resultado = new AccesionesModel
+                            {
+
+                                nombre_local_accesion = reader.GetString(0),
+                                id_accesion_pk = reader.GetString(1),
+                                fecha_ingreso = reader.GetDateTime(2),
+
+                                /*taxonomia*/
+                                nombre_familia = reader.GetString(3),
+                                nombre_genero = reader.GetString(4),
+                                nombre_especie = reader.GetString(5),
+                                nombre_subespecie = reader.GetString(6),
+
+                                /*recolector*/
+                                nombre_instituto = reader.GetString(7),
+                                detalle_instituto = reader.GetString(8),
+                                primer_nombre_colector = reader.GetString(9),
+                                primer_apellido_colector = reader.GetString(10),
+                                telefono_colecto = reader.GetString(11),
+                                email_colector = reader.GetString(12),
+
+                                /*antecedentes*/
+                                nombre_uso = reader.GetString(13),
+                                nombre_practica_cultural = reader.GetString(14),
+                                nombre_plaga_enfermedad = reader.GetString(15),
+                                fecha_siembra = reader.GetDateTime(16),
+                                fecha_cosecha = reader.GetDateTime(17),
+                                fecha_floracion = reader.GetDateTime(18),
+                                fecha_fructuacion = reader.GetDateTime(19),
+                                observacion_antecedente = reader.GetString(20),
+
+
+                                /*propiedad*/
+                                nombre_propiedad = reader.GetString(21),
+                                nombre_propietario = reader.GetString(22),
+                                apellido_propietario = reader.GetString(23),
+                                telefono_propietario = reader.GetString(24),
+                                email_propietario = reader.GetString(25),
+
+
+                                /*ubicacion*/
+                                nombre_pais = reader.GetString(26),
+                                nombre_provincia = reader.GetString(27),
+                                nombre_canton = reader.GetString(28),
+                                nombre_parroquia = reader.GetString(29),
+                                calle_principal = reader.GetString(30),
+                                calle_secundaria = reader.GetString(31),
+                                referencia_direcion = reader.GetString(32),
+
+                                /*detalles de la localidad*/
+                                latitud_propiedad = reader.GetString(33),
+                                altitud_propiedad = reader.GetString(34),
+                                longitud_propiedad = reader.GetString(35),
+                                nombre_forma_geografica = reader.GetString(36),
+                                luz = reader.GetString(37),
+                                temperatura_clima = reader.GetString(38),
+                                humedad_clima = reader.GetString(39),
+
+                                /*suelo*/
+                                nombre_textura_suelo = reader.GetString(40),
+                                color = reader.GetString(41),
+                                drenaje_suelo = reader.GetBoolean(42),
+                                erosion_suelo = reader.GetBoolean(43),
+                                pedregosidad_suelo = reader.GetBoolean(44),
+
+                                /*mas detalles */
+                                nombre_estado_germoplasma = reader.GetString(45),
+                                nombre_metodo_muestra = reader.GetString(46)
+
+                                // Añade más propiedades según los datos que devuelva tu función
+                            };
+                            resultados.Add(resultado);
+                            Console.WriteLine(resultado.id_accesion_pk + "--------------");
+                        }
+                        Console.WriteLine("Fuera de While");
+                        conn.Close();
+                    }
+                }
+            }
+            return View(resultados);
+        }
 
 
 
@@ -497,7 +713,7 @@ namespace GermoBank.Controllers.ControllersPersonalizados
             }
 
 
-            return RedirectToAction("ListarAccesiones", "Accesion01");
+            return RedirectToAction("UltimaAccesion", "Accesion01");
             // redirigir al usuario a la pagina de detalles de la nueva accesión
 
 

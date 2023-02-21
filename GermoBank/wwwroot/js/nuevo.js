@@ -1,29 +1,17 @@
-﻿
+﻿$(document).ready(function () {
 
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-}
+    $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+    });
 
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-}
+    $('#sidebarCollapse').on('click', function () {
+        // open or close navbar
+        $('#sidebar').toggleClass('active');
+        // close dropdowns
+        $('.collapse.in').toggleClass('in');
+        // and also adjust aria-expanded attributes we use for the open/closed arrows
+        // in our CSS
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+    });
 
-const form = document.querySelector("form"),
-    nextBtn = form.querySelector(".nextBtn"),
-    backBtn = form.querySelector(".backBtn"),
-    allInput = form.querySelectorAll(".first input");
-
-
-nextBtn.addEventListener("click", () => {
-    allInput.forEach(input => {
-        if (input.value != "") {
-            form.classList.add('secActive');
-        } else {
-            form.classList.remove('secActive');
-        }
-    })
-})
-
-backBtn.addEventListener("click", () => form.classList.remove('secActive'));
+});

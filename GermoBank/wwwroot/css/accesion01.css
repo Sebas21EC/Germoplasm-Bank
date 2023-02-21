@@ -1,62 +1,65 @@
-﻿
-/*accesiones 01*/
-@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+﻿@import url("https://fonts.googleapis.com/css2?family=Days+One&display=swap");
 
-
-.container {
-    z-index: 1;
-    margin-top: 0px;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    border-radius: 6px;
-    padding: 0px;
-    display: inline-block;
+.container header {
+    position: relative;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    top: 20px;
+    font-family: "Days One";
+    font-style: normal;
+    font-weight: 200;
+    font-size: 50px;
+    line-height: 76px;
+    text-align: center;
+    text-transform: uppercase;
+    mix-blend-mode: normal;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-    .container header {
-        position: relative;
-        color: #333;
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-        left: 80px;
-        top: 20px;
-        font-family: 'Days One';
-        font-style: normal;
-        font-weight: 200;
-        font-size: 50px;
-        line-height: 76px;
-        text-align: center;
-        text-transform: uppercase;
-        mix-blend-mode: normal;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    .container header::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        height: 3px;
+        width: 27px;
+        border-radius: 8px;
+        background-color: #a1e2a1;
     }
 
-        .container header::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -2px;
-            height: 3px;
-            width: 27px;
-            border-radius: 8px;
-            background-color: #a1e2a1;
-        }
+h1 {
+    position: inherit;
+    width: 316px;
+    height: 43px;
+    top: 0; /* o top: -30px; */
 
-    .container form {
-        position: relative;
-        margin-top: 20px;
-        min-height: 600px;
-        overflow: hidden;
-        left: 80px;
+    font-family: "Bree Serif";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #000000;
+    mix-blend-mode: normal;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.container form {
+    position: relative;
+    margin-top: 20px;
+    min-height: 600px;
+    overflow: hidden;
+    left: 80px;
+}
+
+    .container form .form {
+        position: absolute;
+        transition: 0.3s ease;
+        margin-top: 40px;
     }
-
-        .container form .form {
-            position: absolute;
-            transition: 0.3s ease;
-            margin-top: 40px;
-        }
 
 form.secActive .form.second {
     opacity: 1;
@@ -70,9 +73,7 @@ form.secActive .form.first {
     transform: translateX(-100%);
 }
 
-
 .container form .fields {
-    display: flex;
     align-items: left;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -91,12 +92,13 @@ form .fields .input-field {
     font-size: 15px;
     font-weight: 100;
     color: #2e2e2e;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     margin-top: 0.2px;
     width: 100%;
 }
 
-.input-field input, select {
+.input-field input,
+select {
     outline: none;
     font-size: 20px;
     color: #333;
@@ -109,7 +111,7 @@ form .fields .input-field {
 
     .input-field input :focus,
     .input-field select:focus {
-        box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
     }
 
     .input-field select,
@@ -124,24 +126,36 @@ form .fields .input-field {
             color: #333;
         }
 
-.container form button, .backBtn {
+.container form button,
+.backBtn {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 45px;
-    max-width: 200px;
-    width: 100%;
-    border: none;
-    outline: none;
-    color: #fff;
-    border-radius: 5px;
-    margin: 25px 0;
-    background-color: #648C12;
-    transition: all 0.3s linear;
-    cursor: pointer;
-    position: fixed;
-    bottom: 0;
-    right: 0;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px 24px;
+    gap: 10px;
+    position: absolute;
+    width: 150px;
+    height: 56px;
+    left: 75%;
+    top: 75%;
+    background: #648C12;
+    border-radius: 8px;
+    border-color: #648C12;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 24px;
+    /* identical to box height, or 75% */
+
+    text-transform: uppercase;
+    /* Neutral/Main (50) */
+
+    color: #FBFBFB;
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
 }
 
 .container form .btnText {
@@ -167,7 +181,8 @@ form .buttons {
     align-items: center;
 }
 
-    form .buttons button, .backBtn {
+    form .buttons button,
+    .backBtn {
         margin-right: 14px;
     }
 
@@ -184,79 +199,3 @@ form .buttons {
         width: calc(100% / 2 - 15px);
     }
 }
-
-.details2 {
-    margin-top: 10px;
-    width: 31%;
-    float: right;
-    clear: right;
-    display: flex;
-    margin-left: 5px;
-    flex-direction: row; /* change to column */
-}
-
-    .details2 .fields {
-        display: flex;
-        flex-direction: column;
-        margin-top: 10px;
-        margin-bottom: 0px;
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-
-        .details2 .fields .input-field {
-            display: flex;
-            align-items: left;
-            margin-left: 5px; /* change to 0 */
-            width: auto;
-        }
-
-            .details2 .fields .input-field .label {
-                display: inline-block;
-                margin-right: 10px;
-                text-align: left; /* add this */
-                margin-top: 5px;
-            }
-
-            .details2 .fields .input-field div {
-                display: flex;
-                align-items: left;
-                margin-top: 2px;
-            }
-
-            .details2 .fields .input-field .div input {
-                display: inline-block;
-                margin-top: 0px;
-                align-content: right; /* add this */
-                flex-direction: row;
-                margin-left: 2px:
-            }
-
-.izqui {
-    width: 50%;
-    float: left;
-    display: list-item;
-    margin-top: -15px;
-}
-
-    .izqui .fields {
-        display: flex;
-        flex-direction: column;
-    }
-
-        .izqui .fields div {
-            margin-left: 0px;
-        }
-
-        .izqui .fields .div .label {
-            font-family: 'Inter', sans-serif;
-        }
-
-input:invalid {
-    border: 2px solid;
-}
-
-input:valid {
-    border: 2px solid;
-}
-
