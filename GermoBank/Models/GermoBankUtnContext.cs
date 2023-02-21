@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using GermoBank.Models.ModelsPersonalizados;
 using Microsoft.EntityFrameworkCore;
+using GermoBank.Datos.DatosPersonalizados;
 
 namespace GermoBank.Models;
 
@@ -14,7 +16,6 @@ public partial class GermoBankUtnContext : DbContext
         : base(options)
     {
     }
-
     public virtual DbSet<AccecionesTb> AccecionesTbs { get; set; }
 
     public virtual DbSet<AntecedentesTb> AntecedentesTbs { get; set; }
@@ -64,6 +65,7 @@ public partial class GermoBankUtnContext : DbContext
     public virtual DbSet<TexturasSuelosTb> TexturasSuelosTbs { get; set; }
 
     public virtual DbSet<UsosTb> UsosTbs { get; set; }
+
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
@@ -718,6 +720,8 @@ public partial class GermoBankUtnContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("nombre_uso");
         });
+
+
 
         OnModelCreatingPartial(modelBuilder);
     }
