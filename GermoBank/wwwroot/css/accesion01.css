@@ -1,11 +1,16 @@
 ﻿@import url("https://fonts.googleapis.com/css2?family=Days+One&display=swap");
 
-.container header {
+
+
+@import url("https://fonts.googleapis.com/css2?family=Days+One&display=swap");
+
+header2 {
     position: relative;
     color: #333;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    left: 80px;
     top: 20px;
     font-family: "Days One";
     font-style: normal;
@@ -18,16 +23,6 @@
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-    .container header::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -2px;
-        height: 3px;
-        width: 27px;
-        border-radius: 8px;
-        background-color: #a1e2a1;
-    }
 
 h1 {
     position: inherit;
@@ -48,11 +43,12 @@ h1 {
 }
 
 .container form {
-    position: relative;
+    position: absolute;
     margin-top: 20px;
-    min-height: 600px;
     overflow: hidden;
     left: 80px;
+    width: 100%;
+    height: 100%;
 }
 
     .container form .form {
@@ -78,6 +74,7 @@ form.secActive .form.first {
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 20px;
+    font-family: 'Inter';
 }
 
 form .fields .input-field {
@@ -89,10 +86,10 @@ form .fields .input-field {
 }
 
 .input-field label {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 100;
     color: #2e2e2e;
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter';
     margin-top: 0.2px;
     width: 100%;
 }
@@ -126,7 +123,7 @@ select {
             color: #333;
         }
 
-.container form button,
+form button,
 .backBtn {
     display: flex;
     flex-direction: row;
@@ -136,15 +133,14 @@ select {
     position: absolute;
     width: 150px;
     height: 56px;
-    left: 75%;
-    top: 75%;
+    left: 80%;
+    bottom: 20%;
     background: #648C12;
     border-radius: 8px;
     border-color: #648C12;
     font-family: 'Nunito';
     font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
+    font-size: 22px;
     line-height: 24px;
     /* identical to box height, or 75% */
 
@@ -164,7 +160,7 @@ select {
 }
 
 form button:hover {
-    background-color: #265df2;
+    background-color: #0f7837;
 }
 
 form button i,

@@ -72,7 +72,7 @@
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a asp-area="" asp-controller="Accesion01" asp-action="ListarAccesiones">Detalles accesión</a>
+                            <a asp-area="" asp-controller="Accesion01" asp-action="ListarAccesiones">Ver accesiones</a>
                         </li>
                         <li>
                             <a asp-area="" asp-controller="Accesion01" asp-action="Index">Agregar accesión</a>
@@ -87,33 +87,32 @@
                        aria-expanded="false"
                        class="dropdown-toggle">
                         <i class="bi bi-tree-fill"></i>
-                        TAXONOMIA
+                        TAXONOMÍA
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a class="nav-link " asp-area="" asp-controller="FamiliasTbs" asp-action="Index">Familia</a>
+                            <a class="nav-link " asp-area="" asp-controller="FamiliasTbs" asp-action="Index">Familias</a>
                         </li>
                         <li>
-                            <a class="nav-link " asp-area="" asp-controller="GenerosTbs" asp-action="Index">Genero</a>
+                            <a class="nav-link " asp-area="" asp-controller="GenerosTbs" asp-action="Index">Géneros</a>
                         </li>
                         <li>
-                            <a class="nav-link " asp-area="" asp-controller="EspeciesTbs" asp-action="Index">Especie</a>
+                            <a class="nav-link " asp-area="" asp-controller="EspeciesTbs" asp-action="Index">Especies</a>
                         </li>
                         <li>
-                            <a class="nav-link " asp-area="" asp-controller="SubespeciesTbs" asp-action="Index">Subespecie</a>
+                            <a class="nav-link " asp-area="" asp-controller="SubespeciesTbs" asp-action="Index">Subespecies</a>
                         </li>
                     </ul>
                 </li>
                 <li class="active">
-                    <a href="#usuarioSubmenu"
+                   <!-- <a href="#usuarioSubmenu"
                        data-toggle="collapse"
                        aria-expanded="false"
                        class="dropdown-toggle">
                         <i class="bi bi-person-circle"></i>
 
             USUARIOS
-              </a
-            >
+              </a >
                     <ul class="collapse list-unstyled" id="usuarioSubmenu">
                         <li>
                             <a href="#" class="nav-link "> Buscar  </a>
@@ -126,11 +125,11 @@
                 </li>
 
                 <li>
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Ayuda">  <i class="bi bi-question-circle"></i> AYUDA</a>
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Ayuda">  <i class="bi bi-question-circle"></i> AYUDA</a>
                 </li>
 
 
-                <li class="active">
+                <li class="active"> -->
                     <a href="#contactoSubmenu"
                        data-toggle="collapse"
                        aria-expanded="false"
@@ -148,10 +147,10 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">
+                    <!-- a href="#">
                         <i class="bi bi-box-arrow-right"></i>
                         CERRAR SESIÓN
-                    </a>
+                    </a> -->
                 </li>
             </ul>
         </nav>
@@ -159,7 +158,7 @@
 
 
 
-    <div class="container" >
+    <div class="container" style="margin-left:250px; >
         <main role="main" >
             @RenderBody()
         </main>

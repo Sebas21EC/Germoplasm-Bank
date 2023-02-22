@@ -9,6 +9,9 @@
         color: red;
         white-space: nowrap;
     }
+    label {
+        white-space: nowrap;
+    }
 </style>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -16,125 +19,158 @@
 <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
 
-<div style="margin-left:250px; margin-top:50px;">
+<div style="margin-left:250px; margin-top:50px;" >
 
-<header>ingresar accesion</header>
 <form method="post"
           action="ControllersPersonalizados/Accesion01/AgregarAccesion" id="myForm">
-    <h1>Taxonomía:</h1>
-    <div class="row g-5">
-        <div class="col-12 col-md 6 col-lg-6 col-sm-8">
-            <div class="card border-0">
-                <div class="fields">
-                    <div class="input-field">
-                        <label for="familia">Familia:</label>
-                        <select id="familia"
-                                name="familia"
-                                class="form-select form-select-sm danger">
-                            <option value="">--Seleccione una familia--</option>
-                            @foreach (var familia in Model.familia)
-                            {           
-                                <option value="@familia.IdFamiliaPk">
-                                    @familia.NombreFamilia
-                                </option>
-                            }   
-                        </select>
-                    </div>
-                    <div class="input-field">
-                        <label for="genero">Genero:</label>
-                        <select id="genero" name="genero" class="danger" disabled>
-                            <option value="">--Seleccione un genero--</option>
-                        </select>
-                    </div>
-                    <div class="input-field">
-                        <label for="especie">Especie:</label>
-                        <select id="especie" name="especie" class="danger" disabled>
-                            <option value="">--Seleccione una especie--</option>
-                        </select>
-                    </div>
 
-                    <div class="input-field">
-                        <label for="subespecie">Subespecie:</label>
-                        <select id="subespecie" name="subespecie" disabled>
-                            <option value="">--Seleccione una subespecie--</option>
-                        </select>
-                    </div>
 
+
+
+        <div class="container">
+              <div class="row mt-3">
+                <div class="col-md-7">
+                    <div class="card border-0">
+                        <div class="card-body  align-content-center align-self-center align-items-center">
+                            <div class="mt-3">
+                            <header class="header2">agregar accesión</header>
+
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-12 col-md 6 col-lg-6 col-sm-8">
-            <div class="card border-0">
-                <div class="fields">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <div class="input-field">
+                                <label for="familia">Familia:</label>
+                                <select id="familia"
+                                        name="familia"
+                                        class="form-select form-select-sm danger">
+                                    <option value="">--Seleccione una familia--</option>
+                                    @foreach (var familia in Model.familia)
+                                    {           
+                                        <option value="@familia.IdFamiliaPk">
+                                            @familia.NombreFamilia
+                                        </option>
+                                    }   
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <label for="genero">Género:</label>
+                                <select id="genero" name="genero" class="danger" disabled>
+                                    <option value="">--Seleccione un género--</option>
+                                </select>
+                            </div>
+                            <div class="input-field">
+                                <label for="especie">Especie:</label>
+                                <select id="especie" name="especie" class="danger" disabled>
+                                    <option value="">--Seleccione una especie--</option>
+                                </select>
+                            </div>
 
-                    <div>
-                        <div class="input-field">
-                            <label for="nombre_comun">Nombre Comun: </label>
-                            <div>
-                                <input type="text"
-                                       id="nombre_comun"
-                                       name="nombre_comun"
-                                       placeholder="Nombre comun"
-                                       required />
+                            <div class="input-field">
+                                <label for="subespecie">Subespecie:</label>
+                                <select id="subespecie" name="subespecie" disabled>
+                                    <option value="">--Seleccione una subespecie--</option>
+                                </select>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0">
+                        <div class="card-body">
 
-                    <div class="fields">
-                        <br />
-                        <div>
-                            <div class="input-field">
-                                <label for="fecha_recoleccion">Fecha: </label>
+                            <div>
+                                <div class="input-field">
+                                    <label for="nombre_comun">Nombre Común: </label>
+                                    <div>
+                                        <input type="text"
+                                               id="nombre_comun"
+                                               name="nombre_comun"
+                                               placeholder="Nombre común"
+                                               required />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fields">
+                                <br />
                                 <div>
-                                    <input type="date"
-                                           id="fecha_recoleccion"
-                                           name="fecha_recoleccion" />
+                                    <div class="input-field">
+                                        <label for="fecha_recoleccion">Fecha de recolección: </label>
+                                        <div>
+                                            <input type="date"
+                                                   id="fecha_recoleccion"
+                                                   name="fecha_recoleccion" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input-field">
+                                <div class="">
+                                    <label for="ejemplar_herbario" class="form-check-label">
+                                        Ejemplar herbario:
+                                    </label>
+                                    <input type="checkbox"
+                                           id="ejemplar_herbario"
+                                           name="ejemplar_herbario"
+                                           class="form-check-input" />
+                                </div>
+                            </div>
+                            <div class="input-field align-content-center">
+
+                                <label for="aislamiento_poblacional" class=" form-check-inline form-check-label">
+                                    Aislamiento poblacional:
+                                </label>
+                                <input type="checkbox"
+                                       id="aislamiento_poblacional"
+                                       name="aislamiento_poblacional"
+                                       class="form-check-inline form-check-input" />
+
+                            </div>
+                            <div class="input-field">
+                                <div class="">
+                                    <label for="cultivos_vecinos" class="form-check-label"> Cultivos cercanos: </label>
+                                    <input type="checkbox"
+                                           id="cultivos_vecinos"
+                                           name="cultivos_vecinos"
+                                           class="form-check-inline form-check-input" />
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-8">
+                    <div class="card border-0">
+                        <div class="card-body  align-content-center align-self-center align-items-center">
+                            <div class="mt-3">
+                                <input type="submit" value="SIGUIENTE" class="btn btn-outline-success" />
 
-                    <div class="input-field">
-                        <div>
-                            <label for="ejemplar_herbario">
-                                Ejemplar hervario:
-                            </label>
-                            <input type="checkbox"
-                                   id="ejemplar_herbario"
-                                   name="ejemplar_herbario" />
-                        </div>
-                    </div>
-                    <div class="input-field">
-                        <div>
-                            <label for="aislamiento_poblacional">
-                                Aislamiento poblacional:
-                            </label>
-                            <input type="checkbox"
-                                   id="aislamiento_poblacional"
-                                   name="aislamiento_poblacional" />
-                        </div>
-                    </div>
-                    <div class="input-field">
-                        <div>
-                            <label for="cultivos_vecinos"> Cultivos cercanos: </label>
-                            <input type="checkbox"
-                                   id="cultivos_vecinos"
-                                   name="cultivos_vecinos" />
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <div class="buttons">
-        <button class="submit">
-            <span class="btnText">SIGUIENTE</span>
-            <i class="uil uil-navigator"></i>
-        </button>
-    </div>
-    
+
+
+
+
+
+
+
+
 </form>
 
 </div>
@@ -224,6 +260,7 @@
         });
     });
 </script>
+
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
@@ -245,11 +282,19 @@
                 },
                 subespecie: {
                     required: true
+                },
+                // Agregar validaciones para los campos de texto, número y fecha
+                nombre_comun: {
+                    required: true,
+                },
+
+                fecha_recoleccion: {
+                    required: true,
                 }
             },
             messages: {
                 familia: {
-                    required: 'Por favor selecciona un país'
+                    required: 'Por favor selecciona una fmailia'
                 },
                 genero: {
                     required: 'Por favor selecciona un genero'
@@ -260,8 +305,16 @@
                 subespecie: {
                     required: 'Por favor selecciona una subespecie'
                 },
+                // Agregar mensajes de validación para los campos de texto, número y fecha
+                nombre_comun: {
+                    required: 'Por favor ingresa un valor de texto',
+                },
 
+                fecha_recoleccion: {
+                    required: 'Por favor ingresa una fecha',
+                }
             }
         });
     });
+
 </script>

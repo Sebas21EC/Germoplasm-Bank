@@ -4,124 +4,166 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<link rel="stylesheet" href="~/css/Accesion03.css" />
+<link rel="stylesheet" href="~/css/accesion01.css" />
+<link rel="stylesheet" href="~/css/titulos.css" />
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    label.error {
+        color: red;
+        white-space: nowrap;
+    }
 
-<div class="container">
-    <div>
-        <header class="header2">agregar accesion</header>
-    </div>
-    <div class="caja3">
-        <form method="post" action="AgregarAccesion_03" style="margin-left:250px; height:100%; width:100%;">
-            <div class="acce3-caja1">
-                <h1>Datos de localidad:</h1>
-                <div class="fields">
-                    <div class="input-field">
-                        <label for="provincia">Provincias:</label>
-                        <select id="provincia"
-                                name="provincia"
-                                class="form-select form-select-sm">
-                            <option value="">--Seleccione una provincia--</option>
-                            @foreach (var provincia in Model.provincias)
-                            {           
-                                <option value="@provincia.IdProvinciaPk">
-                                    @provincia.NombreProvincia
-                                </option>
-                            }   
-                        </select>
-                    </div>
+    label {
+        white-space: nowrap;
+    }
 
-                    <div class="input-field">
-                        <label for="canton">Cantones:</label>
-                        <select id="canton" name="canton" disabled>
-                            <option value="">--Seleccione un cantón--</option>
-                        </select>
-                    </div>
+    .card-body {
+        padding: 0px;
+    }
+</style>
 
-                    <div class="input-field">
-                        <label for="codigo_parroquia">Parroquias:</label>
-                        <select id="codigo_parroquia" name="codigo_parroquia" disabled>
-                            <option value="">--Seleccione una parroquia--</option>
-                        </select>
+<div style=" margin-top:50px;" >
+
+    <form method="post"
+          action="AgregarAccesion_03"
+          id="myForm"
+         >
+
+
+        <div class="container">
+
+            <div class="row mt-3">
+                <div class="col-md-10">
+                    <div class="card border-0">
+                        <div class="card-body  align-content-center align-self-center align-items-center">
+                            <div class="mt-3">
+                                <header  id="titulo_xd">agregar accesión</header>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="acce3-caja2">
-                <div class="sub1-caja2">
-                    <div class="fields">
+            <div class="row">
+                <h1>Datos de localidad:</h1>
+
+                <div class="col-md-4">
+                    <div class="card border-0 ">
+
                         <div class="input-field">
-                            <div>
-                                <label for="c_principal">Calle Principal: </label>
-                                <input type="text"
-                                       id="c_principal"
-                                       name="c_principal"
-                                       placeholder="Calle Principal"
-                                       required />
+                            <label for="provincia">Provincias:</label>
+                            <select id="provincia"
+                                    name="provincia"
+                                    class="form-select form-select-sm">
+                                <option value="">--Seleccione una provincia--</option>
+                                @foreach (var provincia in Model.provincias)
+                                {           
+                                    <option value="@provincia.IdProvinciaPk">
+                                        @provincia.NombreProvincia
+                                    </option>
+                                }   
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label for="canton">Cantones:</label>
+                            <select id="canton" name="canton" disabled>
+                                <option value="">--Seleccione un cantón--</option>
+                            </select>
+                        </div>
+
+
+                        <div class="input-field">
+                            <label for="codigo_parroquia">Parroquias:</label>
+                            <select id="codigo_parroquia" name="codigo_parroquia" disabled>
+                                <option value="">--Seleccione una parroquia--</option>
+                            </select>
+                        </div>
+
+                        <div class="fields">
+                            <div class="input-field">
+                                <div>
+                                    <label for="c_principal">Calle Principal: </label>
+                                    <input type="text"
+                                           id="c_principal"
+                                           name="c_principal"
+                                           placeholder="Calle Principal"
+                                           required />
+                                </div>
+                            </div>
+                            <div class="input-field">
+                                <div>
+                                    <label for="c_secundaria">Calle Secundaria: </label>
+                                    <input type="text"
+                                           id="c_secundaria"
+                                           name="c_secundaria"
+                                           placeholder="Calle Secundaria"
+                                           required />
+                                </div>
+                            </div>
+                            <div class="input-field">
+                                <div>
+                                    <label for="referencia">Referencia: </label>
+                                    <input type="text"
+                                           id="referencia"
+                                           name="referencia"
+                                           placeholder="Referencia"
+                                           required />
+                                </div>
                             </div>
                         </div>
-                        <div class="input-field">
-                            <div>
-                                <label for="c_secundaria">Calle Secundaria: </label>
-                                <input type="text"
-                                       id="c_secundaria"
-                                       name="c_secundaria"
-                                       placeholder="Calle Secundaria"
-                                       required />
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0">
+                        <div class="fields">
+                            <div class="input-field">
+                                <div>
+                                    <label for="latitud">Latitud: </label>
+                                    <input type="number"
+                                           step="any"
+                                           id="latitud"
+                                           name="latitud"
+                                           placeholder="Latitud"
+                                           required />
+                                </div>
                             </div>
-                        </div>
-                        <div class="input-field">
-                            <div>
-                                <label for="referencia">Referenicia: </label>
-                                <input type="text"
-                                       id="referencia"
-                                       name="referencia"
-                                       placeholder="Referenicia"
-                                       required />
+                            <div class="input-field">
+                                <div>
+                                    <label for="altitud">Altitud: </label>
+                                    <input type="number"
+                                           step="any"
+                                           id="altitud"
+                                           name="altitud"
+                                           placeholder="Altitud"
+                                           required />
+                                </div>
+                            </div>
+                            <div class="input-field">
+                                <div>
+                                    <label for="longitud">Longitud: </label>
+                                    <input type="number"
+                                           step="any"
+                                           id="longitud"
+                                           name="longitud"
+                                           placeholder="Longitud"
+                                           required />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="sub2-caja2">
-                    <div class="fields">
+                <div class="col-md-4">
+                    <div class="card border-0">
                         <div class="input-field">
-                            <div>
-                                <label for="latitud">Latitud: </label>
-                                <input type="text"
-                                       id="latitud"
-                                       name="latitud"
-                                       placeholder="Latitud"
-                                       required />
-                            </div>
-                        </div>
-                        <div class="input-field">
-                            <div>
-                                <label for="altitud">Altitud: </label>
-                                <input type="text"
-                                       id="altitud"
-                                       name="altitud"
-                                       placeholder="Altitud"
-                                       required />
-                            </div>
-                        </div>
-                        <div class="input-field">
-                            <div>
-                                <label for="longitud">Longitud: </label>
-                                <input type="text"
-                                       id="longitud"
-                                       name="longitud"
-                                       placeholder="Longitud"
-                                       required />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fields">
-                        <div class="input-field">
-                            <label for="codigo_forma_geograficas">Forma geografica:</label>
+                            <label for="codigo_forma_geograficas">Forma geográfica:</label>
                             <select id="codigo_forma_geograficas"
                                     name="codigo_forma_geograficas"
                                     class="form-select form-select-sm">
                                 <option value="">
-                                    --Seleccione una forma_geograficas--
+                                    --Seleccione una forma geográfica--
                                 </option>
                                 @foreach (var forma_geografica in
                                 Model.formasGeograficasTbs)
@@ -139,7 +181,7 @@
                                        step="any"
                                        id="temperatura"
                                        name="temperatura"
-                                       placeholder="Longitud"
+                                       placeholder="Temperatura"
                                        required />
                             </div>
                         </div>
@@ -167,17 +209,32 @@
                     </div>
                 </div>
             </div>
-            <div class="buttons">
-                <button class="submit">
-                    <span class="btnText">SIGUIENTE</span>
-                    <i class="uil uil-navigator"></i>
-                </button>
-            </div>
-        </form>
-    </div>
+            <div class="mt-3">
+                <div class="col-md-12">
+                    <div class="card border-0">
+                        <div class="card-body  align-content-center align-self-center align-items-center">
+                            <div class="mt-3">
+                                <input type="submit" value="SIGUIENTE" class="btn btn-outline-success" />
 
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </form>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
 
 <script>
     $(function () {
@@ -234,3 +291,123 @@
 
     });
 </script>
+
+
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<script>
+    $(document).ready(function () {
+        $('#myForm').validate({
+            rules: {
+                provincia: {
+                    required: true
+                },
+                canton: {
+                    required: true
+                },
+                codigo_parroquia: {
+                    required: true
+                },
+                c_principal: {
+                    required: true
+                },
+                // Agregar validaciones para los campos de texto, número y fecha
+                c_secundaria: {
+                    required: true,
+                },
+
+                referencia: {
+                    required: true,
+                },
+
+                latitud: {
+                    required: true,
+                },
+
+                altitud: {
+                    required: true,
+                },
+
+                longitud: {
+                    required: true,
+                },
+
+                codigo_forma_geograficas: {
+                    required: true,
+                },
+
+                temperatura: {
+                    required: true,
+                },
+
+
+                humedad: {
+                    required: true,
+                },
+
+                luz: {
+                    required: true,
+                }
+            },
+            messages: {
+                provincia: {
+                    required: 'Por favor seleccione una provincia'
+                },
+                canton: {
+                    required:  'Por favor seleccione un cantón'
+                },
+                codigo_parroquia: {
+                    required: 'Por favor seleccione una parroquia'
+                },
+                c_principal: {
+                    required: 'Por favor ingrese una calle principal'
+                },
+                // Agregar validaciones para los campos de texto, número y fecha
+                c_secundaria: {
+                    required: 'Por favor ingrese una calle secundaria'
+                },
+
+                referencia: {
+                    required: 'Por favor ingrese una referencia'
+                },
+
+                latitud: {
+                    required: 'Por favor ingrese la latitud'
+                },
+
+                altitud: {
+                    required: 'Por favor ingrese la altitud'
+                },
+
+                longitud: {
+                    required: 'Por favor la longitud'
+                },
+
+                codigo_forma_geograficas: {
+                    required: 'Por favor seleccione una forma geográfica'
+
+                temperatura: {
+                    required:  'Por favor ingrese el porcentaje de humedad'
+                },
+
+
+                humedad: {
+                    required: 'Por favor ingrese el humedad en Celsius'
+                },
+
+                luz: {
+                    required: 'Por favor ingrese la el tipo de luz'
+                }
+ 
+            }
+        });
+    });
+
+</script>v

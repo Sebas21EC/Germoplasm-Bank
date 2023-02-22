@@ -5,27 +5,29 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
-
+<link rel="stylesheet" href="~/css/titulos.css" />
+<div style="margin-left:250px; margin-top:50px;">
+    <header>Subespecie</header>
+    <br />
 <div>
-    <h4>SubespeciesTb</h4>
-    <hr />
+
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NombreSubespecie)
+           Nombre de subespecie:
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NombreSubespecie)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdEspecieFkNavigation)
+           Especie:
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdEspecieFkNavigation.IdEspeciePk)
+            @Html.DisplayFor(model => model.IdEspecieFkNavigation.NombreEspecie)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.IdSubespeciePk">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+        <a asp-action="Edit" asp-route-id="@Model?.IdSubespeciePk" class="btn btn-outline-success ">Editar</a> |
+        <a asp-action="Index" class="btn btn-outline-secondary ">Volver a lista</a>
+</div>
 </div>

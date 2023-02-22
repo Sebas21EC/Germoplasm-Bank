@@ -5,27 +5,30 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<link rel="stylesheet" href="~/css/titulos.css" />
+<div style="margin-left:250px; margin-top:50px;">
+    <header>Especies</header>
+    <br />
 
-<div>
-    <h4>EspeciesTb</h4>
-    <hr />
+
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NombreEspecie)
+            Nombre de especie: 
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NombreEspecie)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdGeneroFkNavigation)
+           Género:
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdGeneroFkNavigation.IdGeneroPk)
+            @Html.DisplayFor(model => model.IdGeneroFkNavigation.NombreGenero)
         </dd>
     </dl>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.IdEspeciePk" class="btn btn-outline-success ">Editar</a> |
+        <a asp-action="Index" class="btn btn-outline-secondary ">Volver a lista</a>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.IdEspeciePk">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+

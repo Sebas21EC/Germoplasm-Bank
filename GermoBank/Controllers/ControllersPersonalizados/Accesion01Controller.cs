@@ -293,7 +293,9 @@ namespace GermoBank.Controllers.ControllersPersonalizados
         }
 
 
-        public IActionResult ObtenerAccesion(string IdAccesionPk)
+
+        [HttpGet]
+        public IActionResult ObtenerAccesion(string id)
         {
             Console.WriteLine("LLegando a funcion");
 
@@ -301,7 +303,10 @@ namespace GermoBank.Controllers.ControllersPersonalizados
             using (var conn = new NpgsqlConnection("Server=localhost;Port=5432;Database=GermoBank_UTN;User Id=postgres;Password=root;"))
             {
                 conn.Open();
-                using (var cmd = new NpgsqlCommand("SELECT " +
+
+                Console.WriteLine("Aquiii va codigo :::"+id);
+
+                string cadena = "SELECT " +
                     "nombre_local_accesion, codigo_acc, fecha_ing," +
                     "nombre_fam, nombre_gen,nombre_esp,nombre_subes," +
                     "nombre_inst,detalle_inst,primer_nombre_col,primer_apellido_col,telefono_col,email_col," +
@@ -311,7 +316,9 @@ namespace GermoBank.Controllers.ControllersPersonalizados
                     "latitud_pro,altitud_pro,longitud_pro,nombre_forma_geo,luz,temperatura_cli,humedad_cli," +
                     "nombre_textura_sue,col,drenaje_sue,erosion_sue,pedregosidad_sue," +
                     "nombre_estado_germoplasma,nombre_metodo_muestra " +
-                    " FROM ACCESION_ULTIMA();", conn))
+                    " FROM OBTENER_ACCESION('" + id + "');";
+
+                using (var cmd = new NpgsqlCommand(cadena, conn))
                 {
                     using (var reader = cmd.ExecuteReader())
                     {
